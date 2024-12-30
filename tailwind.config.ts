@@ -1,0 +1,128 @@
+// import type { Config } from 'tailwindcss'
+
+// const config: Config = {
+//   content: [
+//     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+//     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+//     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+//   ],
+//   theme: {
+//     extend: {
+//       backgroundImage: {
+//         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+//         'gradient-conic':
+//           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+//       },
+//     },
+//   },
+//   plugins: [],
+// }
+// export default config
+
+/** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+const rotateX = plugin(function ({ addUtilities }: any) {
+  addUtilities({
+    ".rotate-y-180": {
+      transform: "rotateY(180deg)",
+    },
+  });
+});
+module.exports = {
+  content: ["./App.tsx", "./app/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  theme: {
+    container: {
+      center: true,
+    },
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#054fbf",
+          light: "#054fbf",
+          "dark-light": "#054fbf",
+        },
+        secondary: {
+          DEFAULT: "#054fbf",
+          light: "#054fbf",
+          "dark-light": "#054fbf",
+        },
+        success: {
+          DEFAULT: "#00ab55",
+          light: "#ddf5f0",
+          "dark-light": "#054fbf",
+        },
+        danger: {
+          DEFAULT: "#054fbf",
+          light: "#054fbf",
+          "dark-light": "#054fbf",
+        },
+        warning: {
+          DEFAULT: "#054fbf",
+          light: "#054fbf",
+          "dark-light": "rgba(226,160,63,.15)",
+        },
+        info: {
+          DEFAULT: "#054fbf",
+          light: "#054fbf",
+          "dark-light": "rgba(33,150,243,.15)",
+        },
+        dark: {
+          DEFAULT: "#3b3f5c",
+          light: "#eaeaec",
+          "dark-light": "rgba(59,63,92,.15)",
+        },
+        black: {
+          DEFAULT: "#14141C",
+          light: "#e3e4eb",
+          "dark-light": "rgba(14,23,38,.15)",
+        },
+        white: {
+          DEFAULT: "#ffffff",
+          light: "#e0e6ed",
+          dark: "#888ea8",
+        },
+      },
+      fontFamily: {
+        nunito: ["var(--font-nunito)"],
+      },
+      spacing: {
+        4.5: "18px",
+      },
+      boxShadow: {
+        "3xl": "0 2px 2px rgb(224 230 237 / 46%), 1px 6px 7px rgb(224 230 237 / 46%)",
+        base: "0 4px 24px 0 rgba(34,41,47,.1)",
+      },
+      gridTemplateColumns: {
+        fluid: "repeat(auto-fit, minmax(10rem, 1fr))",
+      },
+      fontFamilyMontserrat: {
+        montserrat: ["var(--font-montserrat)"],
+      },
+      typography: ({ theme }: any) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-invert-headings": theme("colors.white.dark"),
+            "--tw-prose-invert-links": theme("colors.white.dark"),
+            h1: { fontSize: "40px", marginBottom: "0.5rem", marginTop: 0 },
+            h2: { fontSize: "32px", marginBottom: "0.5rem", marginTop: 0 },
+            h3: { fontSize: "28px", marginBottom: "0.5rem", marginTop: 0 },
+            h4: { fontSize: "24px", marginBottom: "0.5rem", marginTop: 0 },
+            h5: { fontSize: "20px", marginBottom: "0.5rem", marginTop: 0 },
+            h6: { fontSize: "16px", marginBottom: "0.5rem", marginTop: 0 },
+            p: { marginBottom: "0.5rem" },
+            li: { margin: 0 },
+            img: { margin: 0 },
+          },
+        },
+      }),
+    },
+  },
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: "class",
+    }),
+    require("@tailwindcss/typography"),
+    rotateX,
+  ],
+};
