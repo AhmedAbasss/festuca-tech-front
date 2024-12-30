@@ -16,25 +16,25 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <Overlay />
         <ScrollToTop />
 
-        <MainContainer>
-          {/* BEGIN SIDEBAR */}
-          <Sidebar />
-          {/* END SIDEBAR */}
-          <div className="main-content flex min-h-screen flex-col">
-            {/* BEGIN TOP NAVBAR */}
-            <Header />
-            {/* END TOP NAVBAR */}
+        {/* <MainContainer> */}
+        {/* BEGIN SIDEBAR */}
+        <Sidebar />
+        {/* END SIDEBAR */}
+        <div className="main-content flex min-h-screen flex-col">
+          {/* BEGIN TOP NAVBAR */}
+          <Header />
+          {/* END TOP NAVBAR */}
 
-            {/* BEGIN CONTENT AREA */}
-            <ContentAnimation>{children}</ContentAnimation>
-            {/* END CONTENT AREA */}
+          {/* BEGIN CONTENT AREA */}
+          <ContentAnimation>{children}</ContentAnimation>
+          {/* END CONTENT AREA */}
 
-            {/* BEGIN FOOTER */}
-            <Footer />
-            {/* END FOOTER */}
-            <Portals />
-          </div>
-        </MainContainer>
+          {/* BEGIN FOOTER */}
+          <Footer />
+          {/* END FOOTER */}
+          <Portals />
+        </div>
+        {/* </MainContainer> */}
       </div>
     </>
   );
