@@ -4,6 +4,7 @@ import { Home } from "./_components/_Home";
 import { Categories } from "./_components/_categories";
 import { DealSection } from "./_components/_DealSection";
 import { DealSection2 } from "./_components/_DealSection2";
+import { Features } from "./_components/Features";
 // import { About } from "./_components/_About";
 // import { OurService } from "./_components/OurService";
 // import GeneralTrade from "./_components/_GeneralTrade";
@@ -21,6 +22,7 @@ const Page = async () => {
       {/* <Categories /> */}
       {/* <DealSection /> */}
       <DealSection2 />
+      <Features />
       {/* <About />
       <OurService />
       <GeneralTrade />
