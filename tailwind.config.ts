@@ -38,14 +38,14 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#054fbf",
-          light: "#054fbf",
-          "dark-light": "#054fbf",
+          DEFAULT: "#28c39a",
+          light: "#eaf1ff",
+          "dark-light": "rgba(67,97,238,.15)",
         },
         secondary: {
-          DEFAULT: "#054fbf",
-          light: "#054fbf",
-          "dark-light": "#054fbf",
+          DEFAULT: "#28c39a",
+          light: "#ebe4f7",
+          "dark-light": "rgb(128 93 202 / 15%)",
         },
         success: {
           DEFAULT: "#00ab55",

@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import React from "react";
 import { Home } from "./_components/_Home";
+import { Categories } from "./_components/_categories";
+import { DealSection } from "./_components/_DealSection";
+import { DealSection2 } from "./_components/_DealSection2";
 // import { About } from "./_components/_About";
 // import { OurService } from "./_components/OurService";
 // import GeneralTrade from "./_components/_GeneralTrade";
@@ -15,6 +18,9 @@ const Page = async () => {
   return (
     <div className="overflow-hidden">
       {/* <Home /> */}
+      {/* <Categories /> */}
+      {/* <DealSection /> */}
+      <DealSection2 />
       {/* <About />
       <OurService />
       <GeneralTrade />

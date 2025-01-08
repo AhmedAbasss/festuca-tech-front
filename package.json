@@ -1,5 +1,5 @@
 {
-  "name": "ur-wings-app",
+  "name": "festuca-tech-front",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -34,6 +34,7 @@
     "next-auth": "^4.24.7",
     "next-reveal": "^1.0.6",
     "nodemailer": "^6.9.14",
+    "owl.carousel": "^2.3.4",
     "rc-upload": "^4.5.2",
     "react": "^18",
     "react-animate-height": "^3.2.3",
@@ -41,12 +42,14 @@
     "react-dom": "^18",
     "react-flatpickr": "^3.10.13",
     "react-leaflet": "^4.2.1",
+    "react-owl-carousel": "^2.3.3",
     "react-perfect-scrollbar": "^1.5.8",
     "react-popper": "^2.3.0",
     "react-redux": "^9.1.1",
     "react-responsive": "^10.0.0",
     "react-select": "^5.8.0",
     "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.14",
     "typed.js": "^2.1.0",
     "universal-cookie": "^7.1.4",
     "yup": "^1.4.0"

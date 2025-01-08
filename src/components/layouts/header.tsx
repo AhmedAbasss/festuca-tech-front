@@ -8,6 +8,30 @@ import { usePathname, useRouter } from "next/navigation";
 import Dropdown from "../dropdown";
 import { getTranslation } from "../../../ni18n/i18n";
 
+// TODO move this component to other file
+interface MenuItem {
+  label: React.ReactNode;
+  href: string;
+}
+interface MainMenuProps {
+  menuItems: MenuItem[];
+}
+export const MainMenu: React.FC<MainMenuProps> = ({ menuItems }) => {
+  return (
+    <div className="bb-main-menu relative flex flex-[auto] justify-start max-[991px]:hidden" id="navbarSupportedContent">
+      <ul className="navbar-nav flex flex-wrap flex-row">
+        {menuItems.map((item, index) => (
+          <li key={index} className="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[45px]">
+            <a className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-[#3d4750] flex" href="offer.html">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 export const Header = () => {
   const pathname = usePathname();
   const dispatch = useDispatch();
@@ -152,8 +176,9 @@ export const Header = () => {
                 <div className="cols bb-logo-detail flex max-[767px]:justify-between">
                   <div className="header-logo flex items-center max-[575px]:justify-center">
                     <a href="index.html">
-                      <img src="assets/img/logo/logo.png" alt="logo" className="light w-[125px] max-[991px]:w-[115px] block" />
-                      <img src="assets/img/logo/logo-dark.png" alt="logo" className="dark w-[125px] max-[991px]:w-[115px] hidden" />
+                      <img src="/logo.svg" alt="logo" className="light w-[50px] max-[991px]:w-[115px] block" />
+                      {/* <img src="/logo.svg" alt="logo" className="light w-[125px] max-[991px]:w-[115px] block" /> */}
+                      {/* <img src="assets/img/logo/logo-dark.png" alt="logo" className="dark w-[125px] max-[991px]:w-[115px] hidden" /> */}
                     </a>
                   </div>
                   <a
@@ -336,7 +361,45 @@ export const Header = () => {
                   aria-label="Toggle navigation">
                   <i className="ri-menu-2-line"></i>
                 </button>
-                <div className="bb-main-menu relative flex flex-[auto] justify-start max-[991px]:hidden" id="navbarSupportedContent">
+                <MainMenu
+                  menuItems={[
+                    { label: "Home", href: "index.html" },
+                    { label: "Categories", href: "Categories.html" },
+                    { label: "Products", href: "Products.html" },
+                    { label: "Pages", href: "Pages.html" },
+                    { label: "Blog", href: "Blog.html" },
+                    {
+                      label: (
+                        <>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            x="0"
+                            y="0"
+                            viewBox="0 0 64 64"
+                            enableBackground="new 0 0 512 512"
+                            xmlSpace="preserve"
+                            className="w-[20px] h-[25px] mr-[5px] leading-[18px] align-middle">
+                            <g>
+                              <path
+                                d="M10 16v22c0 .3.1.6.2.8.3.6 6.5 13.8 21 20h.2c.2 0 .3.1.5.1s.3 0 .5-.1h.2c14.5-6.2 20.8-19.4 21-20 .1-.3.2-.5.2-.8V16c0-.9-.6-1.7-1.5-1.9-7.6-1.9-19.3-9.6-19.4-9.7-.1-.1-.2-.1-.4-.2-.1 0-.1 0-.2-.1h-.9c-.1 0-.2.1-.3.1-.1.1-.2.1-.4.2s-11.8 7.8-19.4 9.7c-.7.2-1.3 1-1.3 1.9zm4 1.5c6.7-2.1 15-7.2 18-9.1 3 1.9 11.3 7 18 9.1v20c-1.1 2.1-6.7 12.1-18 17.3-11.3-5.2-16.9-15.2-18-17.3z"
+                                fill="#000000"
+                                className="fill-[#6c7fd8]"></path>
+                              <path
+                                d="M28.6 38.4c.4.4.9.6 1.4.6s1-.2 1.4-.6l9.9-9.9c.8-.8.8-2 0-2.8s-2-.8-2.8 0L30 34.2l-4.5-4.5c-.8-.8-2-.8-2.8 0s-.8 2 0 2.8z"
+                                fill="#000000"
+                                className="fill-[#6c7fd8]"></path>
+                            </g>
+                          </svg>
+                          Offers
+                        </>
+                      ),
+                      href: "Offers.html",
+                    },
+                  ]}
+                />
+
+                {/* <div className="bb-main-menu relative flex flex-[auto] justify-start max-[991px]:hidden" id="navbarSupportedContent">
                   <ul className="navbar-nav flex flex-wrap flex-row">
                     <li className="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
                       <a className="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block" href="index.html">
@@ -745,8 +808,8 @@ export const Header = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
-                <div className="bb-dropdown-menu flex max-[991px]:hidden">
+                </div> */}
+                {/* <div className="bb-dropdown-menu flex max-[991px]:hidden">
                   <div className="inner-select w-[180px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px] flex items-center">
                     <svg className="svg-icon m-[10px] w-[25px] h-[25px] align-middle" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -769,12 +832,104 @@ export const Header = () => {
                       </select>
                     </div>
                   </div>
+                </div> */}
+
+                <div className="bb-main-menu-desk bg-[#fff] py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
+                  <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
+                    <div className="flex flex-wrap w-full">
+                      <div className="flex justify-start">
+                        {themeConfig.theme === "light" ? (
+                          <button
+                            className={`${
+                              themeConfig.theme === "light" &&
+                              "flex items-center rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                            }`}
+                            onClick={() => dispatch(toggleTheme("dark"))}>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.5" />
+                              <path d="M12 2V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path d="M12 20V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path d="M4 12L2 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path d="M22 12L20 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path opacity="0.5" d="M19.7778 4.22266L17.5558 6.25424" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path opacity="0.5" d="M4.22217 4.22266L6.44418 6.25424" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path opacity="0.5" d="M6.44434 17.5557L4.22211 19.7779" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path opacity="0.5" d="M19.7778 19.7773L17.5558 17.5551" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                            </svg>
+                          </button>
+                        ) : (
+                          ""
+                        )}
+                        {themeConfig.theme === "dark" && (
+                          <button
+                            className={`${
+                              themeConfig.theme === "dark" &&
+                              "flex items-center rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                            }`}
+                            onClick={() => dispatch(toggleTheme("system"))}>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM21.25 12C21.25 17.1086 17.1086 21.25 12 21.25V22.75C17.9371 22.75 22.75 17.9371 22.75 12H21.25ZM12 21.25C6.89137 21.25 2.75 17.1086 2.75 12H1.25C1.25 17.9371 6.06294 22.75 12 22.75V21.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </button>
+                        )}
+                        {themeConfig.theme === "system" && (
+                          <button
+                            className={`${
+                              themeConfig.theme === "system" &&
+                              "flex items-center rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60"
+                            }`}
+                            onClick={() => dispatch(toggleTheme("light"))}>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M3 9C3 6.17157 3 4.75736 3.87868 3.87868C4.75736 3 6.17157 3 9 3H15C17.8284 3 19.2426 3 20.1213 3.87868C21 4.75736 21 6.17157 21 9V14C21 15.8856 21 16.8284 20.4142 17.4142C19.8284 18 18.8856 18 17 18H7C5.11438 18 4.17157 18 3.58579 17.4142C3 16.8284 3 15.8856 3 14V9Z"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                              />
+                              <path opacity="0.5" d="M22 21H2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                              <path opacity="0.5" d="M15 15H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                      <div className="dropdown flex justify-start shrink-0 ml-2">
+                        <Dropdown
+                          offset={[0, 8]}
+                          placement={`${isRtl ? "bottom-start" : "bottom-end"}`}
+                          btnClassName="block p-2 rounded-full bg-white-light/40 dark:bg-dark/40 hover:text-primary hover:bg-white-light/90 dark:hover:bg-dark/60"
+                          button={<div className="h-5 w-5 rounded-full ">{t(i18n.language)}</div>}>
+                          <ul className="grid  gap-2 !px-2 font-semibold text-dark dark:text-white-dark dark:text-white-light/90">
+                            {themeConfig.languageList.map((item: any) => {
+                              return (
+                                <li key={item.code}>
+                                  <button
+                                    type="button"
+                                    className={`flex w-full hover:text-primary ${i18n.language === item.code ? "bg-primary/10 text-primary" : ""}`}
+                                    onClick={() => {
+                                      initLocale(item.code);
+                                      i18n.changeLanguage(item.code);
+                                      setLocale(item.code);
+                                      dispatch(toggleRTL(item.code !== "en" ? "rtl" : "ltr"));
+                                    }}>
+                                    <span className="ltr:ml-3 rtl:mr-3">{t(item.name)}</span>
+                                  </button>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </Dropdown>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       {/* <div className="bb-mobile-menu-overlay hidden w-full h-screen fixed top-[0] left-[0] bg-[#000000cc] z-[16]"></div> */}
       {/* <div
         id="bb-mobile-menu"

@@ -17,7 +17,6 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig = {
-
     env: {
         NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 
@@ -25,3 +24,4 @@ const nextConfig = {
 };
 
 export default withPWA(nextConfig);
+// export default nextConfig;
