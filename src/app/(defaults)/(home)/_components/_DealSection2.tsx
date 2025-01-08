@@ -8,6 +8,7 @@ import { IRootState } from "@/store";
 // import "owl.carousel/dist/assets/owl.carousel.css";
 // import "owl.carousel/dist/assets/owl.theme.default.css";
 
+// TODO move this component to other file
 interface ProductCardProps {
   image: string;
   hoverImage: string;
