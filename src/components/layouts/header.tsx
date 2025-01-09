@@ -22,7 +22,7 @@ export const MainMenu: React.FC<MainMenuProps> = ({ menuItems }) => {
       <ul className="navbar-nav flex flex-wrap flex-row">
         {menuItems.map((item, index) => (
           <li key={index} className="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[45px]">
-            <a className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-[#3d4750] flex" href="offer.html">
+            <a className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-secbg-secondary flex" href="offer.html">
               {item.label}
             </a>
           </li>
@@ -80,7 +80,7 @@ export const Header = () => {
 
   return (
     <header className="bb-header relative z-[5] border-b-[1px] border-solid border-[#eee]">
-      <div className="top-header bg-[#3d4750] py-[6px] max-[991px]:hidden">
+      <div className="top-header bg-secondary py-[6px] max-[991px]:hidden">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
@@ -168,7 +168,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bottom-header py-[20px] max-[991px]:py-[15px]">
+      <div className="bottom-header bg-secondary-light py-[20px] max-[991px]:py-[15px]">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
@@ -239,10 +239,10 @@ export const Header = () => {
                             </svg>
                           </div>
                           <div className="bb-btn-desc flex flex-col ml-[10px] max-[1199px]:hidden">
-                            <span className="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-[#3d4750] mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
+                            <span className="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-secbg-secondary mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
                               Account
                             </span>
-                            <span className="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750] tracking-[0.03rem] whitespace-nowrap">
+                            <span className="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-secbg-secondary tracking-[0.03rem] whitespace-nowrap">
                               Login
                             </span>
                           </div>
@@ -289,10 +289,10 @@ export const Header = () => {
                           </svg>
                         </div>
                         <div className="bb-btn-desc flex flex-col ml-[10px] max-[1199px]:hidden">
-                          <span className="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-[#3d4750] mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
+                          <span className="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-secbg-secondary mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
                             <b className="bb-wishlist-count">3</b> items
                           </span>
-                          <span className="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750] tracking-[0.03rem] whitespace-nowrap">
+                          <span className="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-secbg-secondary tracking-[0.03rem] whitespace-nowrap">
                             Wishlist
                           </span>
                         </div>
@@ -315,10 +315,10 @@ export const Header = () => {
                           <span className="main-label-note-new"></span>
                         </div>
                         <div className="bb-btn-desc flex flex-col ml-[10px] max-[1199px]:hidden">
-                          <span className="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-[#3d4750] mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
+                          <span className="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-secbg-secondary mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
                             <b className="bb-cart-count">4</b> items
                           </span>
-                          <span className="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750] tracking-[0.03rem] whitespace-nowrap">
+                          <span className="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-secbg-secondary tracking-[0.03rem] whitespace-nowrap">
                             Cart
                           </span>
                         </div>
@@ -336,14 +336,14 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bb-main-menu-desk bg-[#fff] py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
+      <div className="bb-main-menu-desk bg-secondary-light py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
               <div className="bb-inner-menu-desk flex max-[1199px]:relative max-[991px]:justify-between">
                 <a
                   href="javascript:void(0)"
-                  className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
+                  className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-secondary-light border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
                   <svg className="svg-icon w-[25px] h-[25px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <path
                       className="fill-[#6c7fd8]"
@@ -402,13 +402,13 @@ export const Header = () => {
                 {/* <div className="bb-main-menu relative flex flex-[auto] justify-start max-[991px]:hidden" id="navbarSupportedContent">
                   <ul className="navbar-nav flex flex-wrap flex-row">
                     <li className="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
-                      <a className="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block" href="index.html">
+                      <a className="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-secbg-secondary tracking-[0.03rem] block" href="index.html">
                         Home
                       </a>
                     </li>
                     <li className="nav-item bb-main-dropdown flex items-center mr-[45px]">
                       <a
-                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
+                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-secbg-secondary block tracking-[0.03rem]"
                         href="javascript:void(0)">
                         Categories
                       </a>
@@ -595,7 +595,7 @@ export const Header = () => {
                     </li>
                     <li className="nav-item bb-dropdown flex items-center relative mr-[45px]">
                       <a
-                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
+                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-secbg-secondary block tracking-[0.03rem]"
                         href="javascript:void(0)">
                         Products
                       </a>
@@ -664,7 +664,7 @@ export const Header = () => {
                     </li>
                     <li className="nav-item bb-dropdown flex items-center relative mr-[45px]">
                       <a
-                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
+                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-secbg-secondary block tracking-[0.03rem]"
                         href="javascript:void(0)">
                         Pages
                       </a>
@@ -729,7 +729,7 @@ export const Header = () => {
                     </li>
                     <li className="nav-item bb-dropdown flex items-center relative mr-[45px]">
                       <a
-                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
+                        className="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-secbg-secondary block tracking-[0.03rem]"
                         href="javascript:void(0)">
                         Blog
                       </a>
@@ -779,7 +779,7 @@ export const Header = () => {
                       </ul>
                     </li>
                     <li className="nav-item flex items-center">
-                      <a className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-[#3d4750] flex" href="offer.html">
+                      <a className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-secbg-secondary flex" href="offer.html">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           version="1.1"
@@ -834,7 +834,7 @@ export const Header = () => {
                   </div>
                 </div> */}
 
-                <div className="bb-main-menu-desk bg-[#fff] py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
+                <div className="bb-main-menu-desk py-[5px] max-[991px]:hidden">
                   <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
                     <div className="flex flex-wrap w-full">
                       <div className="flex justify-start">
@@ -935,7 +935,7 @@ export const Header = () => {
         id="bb-mobile-menu"
         className="bb-mobile-menu transition-all duration-[0.3s] ease-in-out w-[340px] h-full pt-[15px] px-[20px] pb-[20px] fixed top-[0] right-[auto] left-[0] bg-[#fff] translate-x-[-100%] flex flex-col z-[17] overflow-auto max-[480px]:w-[300px]">
         <div className="bb-menu-title w-full pb-[10px] flex flex-wrap justify-between">
-          <span className="menu_title font-Poppins flex items-center text-[16px] text-[#3d4750] font-semibold leading-[26px] tracking-[0.02rem]">My Menu</span>
+          <span className="menu_title font-Poppins flex items-center text-[16px] text-secbg-secondary font-semibold leading-[26px] tracking-[0.02rem]">My Menu</span>
           <button type="button" className="bb-close-menu relative border-[0] text-[30px] leading-[1] text-[#ff0000] bg-transparent">
             ×
           </button>
@@ -1326,22 +1326,22 @@ export const Header = () => {
             <div className="header-res-social mt-[30px]">
               <div className="header-top-social">
                 <ul className="flex flex-row justify-center mb-[0]">
-                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-[#3d4750] rounded-[10px] mr-[.5rem]">
+                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-secondary rounded-[10px] mr-[.5rem]">
                     <a href="#" className="transition-all duration-[0.3s] ease-in-out">
                       <i className="ri-facebook-fill text-[#fff] text-[15px]"></i>
                     </a>
                   </li>
-                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-[#3d4750] rounded-[10px] mr-[.5rem]">
+                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-secondary rounded-[10px] mr-[.5rem]">
                     <a href="#" className="transition-all duration-[0.3s] ease-in-out">
                       <i className="ri-twitter-fill text-[#fff] text-[15px]"></i>
                     </a>
                   </li>
-                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-[#3d4750] rounded-[10px] mr-[.5rem]">
+                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-secondary rounded-[10px] mr-[.5rem]">
                     <a href="#" className="transition-all duration-[0.3s] ease-in-out">
                       <i className="ri-instagram-line text-[#fff] text-[15px]"></i>
                     </a>
                   </li>
-                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-[#3d4750] rounded-[10px]">
+                  <li className="list-inline-item w-[30px] h-[30px] flex items-center justify-center bg-secondary rounded-[10px]">
                     <a href="#" className="transition-all duration-[0.3s] ease-in-out">
                       <i className="ri-linkedin-fill text-[#fff] text-[15px]"></i>
                     </a>

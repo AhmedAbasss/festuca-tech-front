@@ -38,14 +38,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#709DD9",
-          light: "#F8F8FB",
-          "dark-light": "rgba(67,97,238,.15)",
+          DEFAULT: "#6C7FD8",
+          light: "#FFFFFF",
+          dark: "#22252F",
+          // "dark-light": "rgba(67,97,238,.15)",
         },
         secondary: {
-          DEFAULT: "#242732",
-          light: "#FFFFFF",
-          "dark-light": "rgb(128 93 202 / 15%)",
+          DEFAULT: "#3D4750",
+          light: "#F8F8FB",
+          dark: "#2D313E",
+          // "dark-light": "rgb(128 93 202 / 15%)",
         },
         success: {
           DEFAULT: "#00ab55",
