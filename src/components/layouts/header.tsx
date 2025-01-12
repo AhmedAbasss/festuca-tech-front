@@ -34,8 +34,8 @@ export const MainMenu: React.FC<MainMenuProps> = ({ menuItems }) => {
 
 export const Header = () => {
   const pathname = usePathname();
-  const router = useRouter();
   const dispatch = useDispatch();
+  const router = useRouter();
   const { t, i18n, initLocale } = getTranslation();
 
   useEffect(() => {
@@ -67,6 +67,7 @@ export const Header = () => {
   }, [pathname]);
 
   const isRtl = useSelector((state: IRootState) => state.themeConfig.rtlClass) === "rtl";
+
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);
 
   const setLocale = (flag: string) => {
