@@ -34,8 +34,8 @@ export const MainMenu: React.FC<MainMenuProps> = ({ menuItems }) => {
 
 export const Header = () => {
   const pathname = usePathname();
-  const dispatch = useDispatch();
   const router = useRouter();
+  const dispatch = useDispatch();
   const { t, i18n, initLocale } = getTranslation();
 
   useEffect(() => {
@@ -168,7 +168,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bottom-header bg-secondary-light py-[20px] max-[991px]:py-[15px]">
+      <div className="bottom-header bg-primary-light py-[20px] max-[991px]:py-[15px]">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
@@ -336,14 +336,14 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bb-main-menu-desk bg-secondary-light py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
+      <div className="bb-main-menu-desk bg-primary-light py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
               <div className="bb-inner-menu-desk flex max-[1199px]:relative max-[991px]:justify-between">
                 <a
                   href="javascript:void(0)"
-                  className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-secondary-light border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
+                  className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-primary-light border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
                   <svg className="svg-icon w-[25px] h-[25px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <path
                       className="fill-[#6c7fd8]"
@@ -906,7 +906,7 @@ export const Header = () => {
                                 <li key={item.code}>
                                   <button
                                     type="button"
-                                    className={`flex w-full hover:text-primary ${i18n.language === item.code ? "bg-primary/10 text-primary" : ""}`}
+                                    className={` w-full hover:text-primary ${i18n.language === item.code ? "bg-primary/10 text-primary" : ""}`}
                                     onClick={() => {
                                       initLocale(item.code);
                                       i18n.changeLanguage(item.code);

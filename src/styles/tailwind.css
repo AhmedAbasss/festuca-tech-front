@@ -16,11 +16,11 @@
   }
 
   body {
-    @apply bg-secondary-light font-nunito;
+    @apply bg-primary-light font-nunito;
   }
 
   body.dark {
-    @apply bg-[#14131b];
+    @apply bg-primary-dark;
   }
 
   .bb-category-block::before {
@@ -387,8 +387,8 @@ hover:text-primary hover:before:!bg-primary ltr:before:mr-2 rtl:before:ml-2 dark
   .dropdown ul {
     @apply my-1 min-w-[120px] rounded bg-white p-0 py-2 text-black shadow dark:bg-[#1b2e4b] dark:text-white-dark;
   }
-  .dropdown ul li > a,
-  .dropdown ul li > button {
+  .dropdown ul li > button,
+  .dropdown ul li > a {
     @apply flex items-center px-4 py-2 hover:bg-primary/10 hover:text-primary;
   }
   .dropdown ul li > button {

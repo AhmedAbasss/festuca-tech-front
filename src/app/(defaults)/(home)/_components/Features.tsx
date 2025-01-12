@@ -33,7 +33,7 @@ export const Features = () => {
           <div className="min-[992px]:w-[25%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px]" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="200">
             <div className="bb-services-box p-[30px] border-[1px] border-solid border-[#eee] rounded-[20px] text-center">
               <div className="services-img mb-[20px] flex justify-center">
-                <img src="assets/img/services/1.png" alt="services-1" className="w-[50px]" />
+                <img src="assets/images/1.png" alt="services-1" className="w-[50px]" />
               </div>
               <div className="services-contact">
                 <h4 className="font-quicksand mb-[8px] text-[18px] font-bold text-[#3d4750] leading-[1.2] tracking-[0.03rem]">Free Shipping</h4>
@@ -44,7 +44,7 @@ export const Features = () => {
           <div className="min-[992px]:w-[25%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px]" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="400">
             <div className="bb-services-box p-[30px] border-[1px] border-solid border-[#eee] rounded-[20px] text-center">
               <div className="services-img mb-[20px] flex justify-center">
-                <img src="assets/img/services/2.png" alt="services-2" className="w-[50px]" />
+                <img src="assets/images/2.png" alt="services-2" className="w-[50px]" />
               </div>
               <div className="services-contact">
                 <h4 className="font-quicksand mb-[8px] text-[18px] font-bold text-[#3d4750] leading-[1.2] tracking-[0.03rem]">24x7 Support</h4>
@@ -55,7 +55,7 @@ export const Features = () => {
           <div className="min-[992px]:w-[25%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px]" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="600">
             <div className="bb-services-box p-[30px] border-[1px] border-solid border-[#eee] rounded-[20px] text-center">
               <div className="services-img mb-[20px] flex justify-center">
-                <img src="assets/img/services/3.png" alt="services-3" className="w-[50px]" />
+                <img src="assets/images/3.png" alt="services-3" className="w-[50px]" />
               </div>
               <div className="services-contact">
                 <h4 className="font-quicksand mb-[8px] text-[18px] font-bold text-[#3d4750] leading-[1.2] tracking-[0.03rem]">30 Days Return</h4>
@@ -66,7 +66,7 @@ export const Features = () => {
           <div className="min-[992px]:w-[25%] min-[768px]:w-[50%] w-full px-[12px] mb-[24px]" data-aos="flip-up" data-aos-duration="1000" data-aos-delay="800">
             <div className="bb-services-box p-[30px] border-[1px] border-solid border-[#eee] rounded-[20px] text-center">
               <div className="services-img mb-[20px] flex justify-center">
-                <img src="assets/img/services/4.png" alt="services-4" className="w-[50px]" />
+                <img src="assets/images/4.png" alt="services-4" className="w-[50px]" />
               </div>
               <div className="services-contact">
                 <h4 className="font-quicksand mb-[8px] text-[18px] font-bold text-[#3d4750] leading-[1.2] tracking-[0.03rem]">Payment Secure</h4>

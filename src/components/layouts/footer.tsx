@@ -101,7 +101,7 @@ const Footer = () => {
     // </div>
 
     // <footer className="bb-footer mt-[50px] max-[1199px]:mt-[35px] bg-[#f8f8fb] text-[#fff]">
-    <footer className="bb-footer mt-[50px] max-[1199px]:mt-[35px] text-[#fff]">
+    <footer className="bb-footer mt-[50px] bg-secondary-light max-[1199px]:mt-[35px] text-[#fff]">
       {/* <div className="footer-directory py-[50px] max-[1199px]:py-[35px] border-[1px] border-solid border-solid">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
@@ -463,14 +463,14 @@ const Footer = () => {
                   <p className="bb-footer-detail max-w-[400px] mb-[30px] p-[0] font-Poppins text-[14px] leading-[27px] font-normal text-[#686e7d] inline-block relative max-[1399px]:text-[15px] max-[1199px]:text-[14px]">
                     BlueBerry is the biggest market of grocery products. Get your daily needs from our store.
                   </p>
-                  <div className="bb-app-store m-[-7px] flex flex-wrap">
+                  {/* <div className="bb-app-store m-[-7px] flex flex-wrap">
                     <a href="javascript:void(0)" className="app-img">
-                      <img src="assets/img/app/android.png" className="adroid max-w-[140px] m-[7px] rounded-[5px] max-[1399px]:max-w-[120px]" alt="android" />
+                      <img src="assets/images/android.png" className="adroid max-w-[140px] m-[7px] rounded-[5px] max-[1399px]:max-w-[120px]" alt="android" />
                     </a>
                     <a href="javascript:void(0)" className="app-img">
-                      <img src="assets/img/app/apple.png" className="apple max-w-[140px] m-[7px] rounded-[5px] max-[1399px]:max-w-[120px]" alt="apple" />
+                      <img src="assets/images/apple.png" className="apple max-w-[140px] m-[7px] rounded-[5px] max-[1399px]:max-w-[120px]" alt="apple" />
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-info">
@@ -801,7 +801,7 @@ const Footer = () => {
                 <div className="footer-bottom-right">
                   <div className="footer-bottom-payment flex justify-center">
                     <div className="payment-link">
-                      <img src="assets/img/payment/payment.png" alt="payment" className="max-[360px]:w-full" />
+                      <img src="assets/images/payment.png" alt="payment" className="max-[360px]:w-full" />
                     </div>
                   </div>
                 </div>
