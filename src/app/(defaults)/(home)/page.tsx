@@ -20,7 +20,6 @@ const Page = async () => {
       <DealSection2 />
       <DealSection />
       <Features />
-      {/* <RowItem data={data as IProduct[]} />  */}
 
       {/* <About />
       <OurService />
