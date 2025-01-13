@@ -907,7 +907,7 @@ export const Header = () => {
                                 <li key={item.code}>
                                   <button
                                     type="button"
-                                    className={` w-full hover:text-primary ${i18n.language === item.code ? "bg-primary/10 text-primary" : ""}`}
+                                    className={`w-full hover:text-primary ${i18n.language === item.code ? "bg-primary/10 text-primary" : ""}`}
                                     onClick={() => {
                                       initLocale(item.code);
                                       i18n.changeLanguage(item.code);
