@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { IRootState } from "@/store";
 import Link from "next/link";
+import "remixicon/fonts/remixicon.css";
 
 export const DealSection2 = () => {
   return (
@@ -396,6 +397,7 @@ export const DealSection2 = () => {
                         <div className="inner-price mx-[-3px]">
                           <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$15</span>
                           <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span>
+                          <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">Out Of Stock</span>
                         </div>
                         <span className="last-items text-[14px] text-[#686e7d]">500g</span>
                       </div>
