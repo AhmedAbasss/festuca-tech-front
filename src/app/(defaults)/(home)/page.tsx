@@ -5,6 +5,7 @@ import { Features } from "./_components/Features";
 import { DataType, IProduct } from "./product/type";
 import RowItem from "./product/RowItem";
 import Link from "next/link";
+import { DealSection } from "./_components/_DealSection";
 
 const data: IProduct[] = [
   {
@@ -346,8 +347,8 @@ const Page = async () => {
     <div className="overflow-hidden">
       {/* <Home /> */}
       {/* <Categories /> */}
-      {/* <DealSection /> */}
       <DealSection2 />
+      <DealSection />
       <Features />
       {/* <RowItem data={data as IProduct[]} />  */}
 
