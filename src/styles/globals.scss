@@ -1,0 +1,57 @@
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+@import "/src/styles/scss/style.scss";
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  @apply bg-transparent;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/*  style slider dote  */
+.slick-dots li.slick-active {
+  transform: skew(340deg);
+  width: 30px !important;
+}
+.slick-dots li.slick-active div {
+  transform: skew(340deg);
+  @apply bg-primary;
+}
+
+.slick-dots li {
+  transform: skew(340deg);
+  width: 10px !important;
+}
+
+.slick-dots {
+  gap: 0px;
+  display: flex !important;
+  justify-content: center;
+}
+
+.slick-slide div {
+  outline: none;
+}

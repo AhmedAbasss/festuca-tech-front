@@ -1,0 +1,90 @@
+/* new product */
+.bb-pro-tab {
+    ul.bb-pro-tab-nav {
+        li {
+            &:not(:last-child){
+                position: relative;
+                &:after{
+                    content: "/";
+                    position: absolute;
+                    right: -4px;
+                    top: 0;
+                    font-size: 12px;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+.bb-pro-tab {
+    ul.bb-pro-tab-nav {
+        li {
+            &:not(:last-child) {
+                &:after {
+                    right: auto;
+                    left: -4px;
+                }
+            }
+        }
+    }
+}
+
+.bb-inner-tabs {
+    .information {
+        ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+    }
+}
+
+.bb-inner-tabs,
+.bey-single-accordion {
+    .bb-details {
+        .details-info {
+            ul {
+                padding-left: 0;
+                padding-right: 20px;
+            }
+        }
+    }
+    .infomation {
+        ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+    }
+    .bb-reviews {
+        .reviews-bb-box {
+            .inner-image {
+                margin-right: 0;
+                margin-left: 12px;
+            }
+        }
+    }
+    .bb-reviews-form {
+        .bb-review-rating {
+            span {
+                padding-right: 0;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.tab-content > .tab-pane {
+    display: none;
+  }
+  
+  .tab-content > .active {
+    display: block;
+  }
+
+ul#ProductTab {
+    li.active {
+        a {
+            color: $primary;
+        }
+    }
+}
