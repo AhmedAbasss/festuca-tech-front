@@ -3,401 +3,421 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { IRootState } from "@/store";
 import Link from "next/link";
-// import image from "@/public/assets/images/image.png";
-
-// import OwlCarousel from "react-owl-carousel";
-// import "owl.carousel/dist/assets/owl.carousel.css";
-// import "owl.carousel/dist/assets/owl.theme.default.css";
-
-// TODO move this component to other file
-interface ProductCardProps {
-  image: string;
-  hoverImage: string;
-  label: string;
-  category: string;
-  title: string;
-  newPrice: string;
-  oldPrice?: string;
-  weight: string;
-  rating: number;
-  actions: {
-    wishlist: () => void;
-    quickView: () => void;
-    compare: () => void;
-    addToCart: () => void;
-  };
-}
-// TODO make it use array of data instead of blocks
-const ProductCard: React.FC<ProductCardProps> = ({ image, hoverImage, label, category, title, newPrice, oldPrice, weight, rating, actions }) => {
-  return (
-    <div className="bb-deal-card p-[12px]" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-      <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
-        <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
-          <a href="javascript:void(0)">
-            <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-              <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src={image} alt={title} />
-              <img className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src={hoverImage} alt={title} />
-            </div>
-          </a>
-          <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
-            <li className="bb-btn-group">
-              <button
-                onClick={actions.wishlist}
-                className="w-[35px] h-[35px] flex items-center justify-center text-[#777] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]"
-                title="Wishlist">
-                <i className="ri-heart-line text-[18px]"></i>
-              </button>
-            </li>
-            <li className="bb-btn-group">
-              <button
-                onClick={actions.quickView}
-                className="w-[35px] h-[35px] flex items-center justify-center text-[#777] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]"
-                title="Quick View">
-                <i className="ri-eye-line text-[18px]"></i>
-              </button>
-            </li>
-            <li className="bb-btn-group">
-              <button
-                onClick={actions.compare}
-                className="w-[35px] h-[35px] flex items-center justify-center text-[#777] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]"
-                title="Compare">
-                <i className="ri-repeat-line text-[18px]"></i>
-              </button>
-            </li>
-            <li className="bb-btn-group">
-              <button
-                onClick={actions.addToCart}
-                className="w-[35px] h-[35px] flex items-center justify-center text-[#777] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]"
-                title="Add To Cart">
-                <i className="ri-shopping-bag-4-line text-[18px]"></i>
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div className="bb-pro-contact p-[20px]">
-          <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
-            <span className="font-light text-[13px] text-[#777]">{category}</span>
-            <span className="bb-pro-rating">
-              {Array.from({ length: 5 }, (_, i) => (
-                <i key={i} className={`${i < rating ? "ri-star-fill text-[#fea99a]" : "ri-star-line text-[#777]"} text-[15px]`}></i>
-              ))}
-            </span>
-          </div>
-          <h4 className="bb-pro-title mb-[8px] text-[16px]">
-            <a href="#" className="font-semibold text-[#3d4750]">
-              {title}
-            </a>
-          </h4>
-          <div className="bb-price flex justify-between">
-            <div>
-              <span className="new-price text-[16px] font-bold text-[#686e7d]">{newPrice}</span>
-              {oldPrice && <span className="old-price text-[14px] text-[#686e7d] line-through ml-[4px]">{oldPrice}</span>}
-            </div>
-            <span className="last-items text-[14px] text-[#686e7d]">{weight}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export const DealSection2 = () => {
-  const themeConfig = useSelector((state: IRootState) => state.themeConfig);
-  const isRtl = themeConfig.rtlClass === "rtl" ? true : false;
-  const isDark = themeConfig.isDarkMode;
   return (
-    <section className="section-deal overflow-hidden py-[50px] max-[1199px]:py-[35px]">
+    <section className="section-shop pb-[50px] max-[1199px]:pb-[35px]">
       <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
-        <div className="flex flex-wrap w-full">
-          <div className="w-full px-[12px]">
-            <div
-              className="section-title bb-deal mb-[20px] pb-[20px] relative flex justify-between max-[991px]:pb-[0] max-[991px]:flex-col max-[991px]:justify-center max-[991px]:text-center"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="200">
-              <div className="section-detail max-[991px]:mb-[12px]">
-                <h2 className="bb-title font-quicksand mb-[0] p-[0] text-[25px] font-bold text-[#3d4750] relative inline capitalize leading-[1] tracking-[0.03rem] max-[767px]:text-[23px]">
-                  Day of the <span className="text-[#6c7fd8]">deal</span>
-                </h2>
-                <p className="font-Poppins max-w-[400px] mt-[10px] text-[14px] text-[#686e7d] leading-[18px] font-light tracking-[0.03rem] max-[991px]:mx-[auto]">
-                  Don't wait. The time will never be just right.
-                </p>
+        <div className="flex flex-wrap w-full px-[12px]">
+          <div className="bb-shop-overlay hidden w-full h-screen fixed top-[0] left-[0] bg-[#000000cc] z-[17]"></div>
+          <div className="bb-shop-sidebar transition-all duration-[0.3s] ease-in-out w-[300px] h-screen p-[0] fixed top-[0] left-[0] z-[17] translate-x-[-100%] bg-[#fff] overflow-auto">
+            <div className="sidebar-filter-title p-[15px] flex justify-between items-center">
+              <h5 className="font-quicksand text-[18px] font-bold tracking-[0.03rem] leading-[1.2] text-[#3d4750]">Filters</h5>
+              <a
+                className="filter-close transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] text-[22px] font-medium text-[#ff0000]"
+                href="javascript:void(0)">
+                ×
+              </a>
+            </div>
+            <div className="bb-shop-wrap bg-[#f8f8fb] border-[1px] border-solid border-[#eee]">
+              <div className="bb-sidebar-block p-[20px] border-b-[1px] border-solid border-[#eee]">
+                <div className="bb-sidebar-title mb-[20px]">
+                  <h3 className="font-quicksand text-[18px] tracking-[0.03rem] leading-[1.2] font-bold text-[#3d4750]">Category</h3>
+                </div>
+                <div className="bb-sidebar-contact">
+                  <ul>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          clothes
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          Bags
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          Shoes
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          Cosmetics
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          Electrics
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          Phone
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          Watch
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              {/* <div id="dealend" className="dealend-timer"></div> */}
+              <div className="bb-sidebar-block p-[20px] border-b-[1px] border-solid border-[#eee]">
+                <div className="bb-sidebar-title mb-[20px]">
+                  <h3 className="font-quicksand text-[18px] tracking-[0.03rem] leading-[1.2] font-bold text-[#3d4750]">Weight</h3>
+                </div>
+                <div className="bb-sidebar-contact">
+                  <ul>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          200gm pack
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          500gm pack
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          1kg pack
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block mb-[14px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          5kg pack
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                    <li className="relative block">
+                      <div className="bb-sidebar-block-item relative">
+                        <input type="checkbox" className="w-full h-[calc(100%-5px)] absolute opacity-[0] cursor-pointer z-[999] top-[50%] left-[0] translate-y-[-50%]" />
+                        <a href="javascript:void(0)" className="ml-[30px] block text-[#777] text-[14px] leading-[20px] font-normal capitalize cursor-pointer">
+                          10kg pack
+                        </a>
+                        <span className="checked absolute top-[0] left-[0] h-[18px] w-[18px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[5px] overflow-hidden"></span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bb-sidebar-block p-[20px] border-b-[1px] border-solid border-[#eee]">
+                <div className="bb-sidebar-title mb-[20px]">
+                  <h3 className="font-quicksand text-[18px] tracking-[0.03rem] leading-[1.2] font-bold text-[#3d4750]">Color</h3>
+                </div>
+                <div className="bb-color-contact">
+                  <ul>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px] color-sidebar-active">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-1 w-[22px] h-[22px] block rounded-[20px] bg-[#c4d6f9]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-2 w-[22px] h-[22px] block rounded-[20px] bg-[#ff748b]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-3 w-[22px] h-[22px] block rounded-[20px] bg-[#000000]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-4 w-[22px] h-[22px] block rounded-[20px] bg-[#2bff4a]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-5 w-[22px] h-[22px] block rounded-[20px] bg-[#ff7c5e]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-6 w-[22px] h-[22px] block rounded-[20px] bg-[#f155ff]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-7 w-[22px] h-[22px] block rounded-[20px] bg-[#ffef00]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-8 w-[22px] h-[22px] block rounded-[20px] bg-[#c89fff]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-9 w-[22px] h-[22px] block rounded-[20px] bg-[#7bfffa]"></span>
+                      </div>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out inline-block p-[2px] rounded-[20px] cursor-pointer mr-[5px] w-[26px] h-[26px]">
+                      <div className="bb-sidebar-block-item relative">
+                        <span className="pro-color-10 w-[22px] h-[22px] block rounded-[20px] bg-[#56ffc1]"></span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bb-sidebar-block p-[20px] border-b-[1px] border-solid border-[#eee]">
+                <div className="bb-sidebar-title mb-[20px]">
+                  <h3 className="font-quicksand text-[18px] tracking-[0.03rem] leading-[1.2] font-bold text-[#3d4750]">Price</h3>
+                </div>
+                <div className="bb-price-range">
+                  <div className="price-range-slider relative w-full mb-[7px]">
+                    <p className="range-value m-[0]">
+                      <input
+                        type="text"
+                        id="amount"
+                        className="w-full bg-[#fff] text-[#000] text-[16px] mb-[15px] font-initial border-[1px] border-solid border-[#eee] p-[10px] text-center outline-[0] rounded-[10px]"
+                      />
+                    </p>
+                    <div id="slider-range" className="range-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="bb-sidebar-block p-[20px]">
+                <div className="bb-sidebar-title mb-[20px]">
+                  <h3 className="font-quicksand text-[18px] tracking-[0.03rem] leading-[1.2] font-bold text-[#3d4750]">Tags</h3>
+                </div>
+                <div className="bb-tags">
+                  <ul className="flex flex-wrap m-[-5px]">
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Clothes
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Fruits
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Snacks
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Dairy
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Seafood
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Toys
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        perfume
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        jewelry
+                      </a>
+                    </li>
+                    <li className="transition-all duration-[0.3s] ease-in-out m-[5px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] hover:bg-[#6c7fd8] cursor-pointer">
+                      <a href="javascript:void(0)" className="font-Poppins text-[13px] capitalize font-light leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+                        Bags
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="w-full px-3">
-            <div className="bb-deal-slider -m-3">
-              <div className="bb-deal-block owl-carousel flex">
-                {/* Product Card */}
-                <ProductCard
-                  image="/assets/images/image.png"
-                  hoverImage="assets/img/product/back-3.jpg"
-                  label="New"
-                  category="Juice"
-                  title="Mixed Almond nuts juice Pack"
-                  newPrice="$32"
-                  oldPrice="$39"
-                  weight="250 g"
-                  rating={4}
-                  actions={{
-                    wishlist: () => console.log("Added to wishlist"),
-                    quickView: () => console.log("Quick view clicked"),
-                    compare: () => console.log("Compare clicked"),
-                    addToCart: () => console.log("Added to cart"),
-                  }}
-                />
-                <ProductCard
-                  image="/assets/images/image.png"
-                  hoverImage="assets/img/product/back-3.jpg"
-                  label="New"
-                  category="Juice"
-                  title="Mixed Almond nuts juice Pack"
-                  newPrice="$32"
-                  oldPrice="$39"
-                  weight="250 g"
-                  rating={4}
-                  actions={{
-                    wishlist: () => console.log("Added to wishlist"),
-                    quickView: () => console.log("Quick view clicked"),
-                    compare: () => console.log("Compare clicked"),
-                    addToCart: () => console.log("Added to cart"),
-                  }}
-                />
-                <ProductCard
-                  image="/assets/images/image.png"
-                  hoverImage="assets/img/product/back-3.jpg"
-                  label="New"
-                  category="Juice"
-                  title="Mixed Almond nuts juice Pack"
-                  newPrice="$32"
-                  oldPrice="$39"
-                  weight="250 g"
-                  rating={4}
-                  actions={{
-                    wishlist: () => console.log("Added to wishlist"),
-                    quickView: () => console.log("Quick view clicked"),
-                    compare: () => console.log("Compare clicked"),
-                    addToCart: () => console.log("Added to cart"),
-                  }}
-                />
-                <ProductCard
-                  image="/assets/images/image.png"
-                  hoverImage="assets/img/product/back-3.jpg"
-                  label="New"
-                  category="Juice"
-                  title="Mixed Almond nuts juice Pack"
-                  newPrice="$32"
-                  oldPrice="$39"
-                  weight="250 g"
-                  rating={4}
-                  actions={{
-                    wishlist: () => console.log("Added to wishlist"),
-                    quickView: () => console.log("Quick view clicked"),
-                    compare: () => console.log("Compare clicked"),
-                    addToCart: () => console.log("Added to cart"),
-                  }}
-                />
-                {/* <ProductCard
-                  image="/assets/images/image.png"
-                  hoverImage="/assets/images/abouts.png"
-                  label="New"
-                  category="Juice"
-                  title="Mixed Almond nuts juice Pack"
-                  newPrice="$32"
-                  oldPrice="$39"
-                  weight="250 g"
-                  rating={4}
-                  actions={{
-                    wishlist: () => console.log("Added to wishlist"),
-                    quickView: () => console.log("Quick view clicked"),
-                    compare: () => console.log("Compare clicked"),
-                    addToCart: () => console.log("Added to cart"),
-                  }}
-                /> */}
-                {/* <div className="bb-deal-card p-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                  <div className="bb-pro-box bg-white border border-solid border-gray-200 rounded-2xl">
-                    <div className="bb-pro-img relative border-b border-solid border-gray-200 overflow-hidden rounded-t-2xl">
-                      <span className="flags absolute top-2 left-1.5 z-5">
-                        <span className="text-xs text-gray-500 font-medium uppercase">New</span>
-                      </span>
-                      <a href="#">
-                        <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/image.png" alt="product-1" />
-                      </a>
-                      <ul className="bb-pro-actions absolute left-0 right-0 bottom-0 flex items-center justify-center opacity-0 transition duration-300">
-                        <li className="bb-btn-group">
-                          <button title="Wishlist" className="action-btn">
-                            <i className="ri-heart-line text-lg text-gray-500"></i>
+          <div className="w-full">
+            <div className="bb-shop-pro-inner">
+              <div className="flex flex-wrap mx-[-12px] mb-[-24px]">
+                <div className="w-full px-[12px]">
+                  <div className="bb-pro-list-top my-[24px] rounded-[20px] flex bg-[#f8f8fb] border-[1px] border-solid border-[#eee] justify-between">
+                    <div className="flex flex-wrap w-full">
+                      <div className="w-[50%] px-[12px] max-[420px]:w-full">
+                        <div className="bb-bl-btn py-[10px] flex max-[420px]:justify-center">
+                          <button
+                            type="button"
+                            className="grid-btn btn-filter h-[38px] w-[38px] flex justify-center items-center border-[0] p-[5px] bg-transparent mr-[5px]"
+                            title="filter">
+                            <i className="ri-equalizer-2-line text-[20px]"></i>
                           </button>
-                        </li>
-                        <li className="bb-btn-group">
-                          <button title="Quick View" className="action-btn">
-                            <i className="ri-eye-line text-lg text-gray-500"></i>
+                          <button
+                            type="button"
+                            className="grid-btn btn-grid-100 h-[38px] w-[38px] flex justify-center items-center border-[0] p-[5px] bg-transparent mr-[5px] active"
+                            title="grid">
+                            <i className="ri-apps-line text-[20px]"></i>
                           </button>
-                        </li>
-                        <li className="bb-btn-group">
-                          <a href="compare.html" title="Compare" className="action-btn">
-                            <i className="ri-repeat-line text-lg text-gray-500"></i>
-                          </a>
-                        </li>
-                        <li className="bb-btn-group">
-                          <button title="Add To Cart" className="action-btn">
-                            <i className="ri-shopping-bag-4-line text-lg text-gray-500"></i>
+                          <button type="button" className="grid-btn btn-list-100 h-[38px] w-[38px] flex justify-center items-center border-[0] p-[5px] bg-transparent" title="grid">
+                            <i className="ri-list-unordered text-[20px]"></i>
                           </button>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="bb-pro-contact p-5">
-                      <div className="bb-pro-subtitle flex justify-between mb-2">
-                        <a href="#" className="text-xs text-gray-500 font-light">
-                          Chocos
-                        </a>
-                        <span className="bb-pro-rating">
-                          {[...Array(4)].map((_, i) => (
-                            <i key={i} className="ri-star-fill text-sm text-[#fea99a]"></i>
-                          ))}
-                          <i className="ri-star-line text-sm text-gray-500"></i>
-                        </span>
-                      </div>
-                      <h4 className="bb-pro-title mb-2 text-base font-semibold text-gray-800">
-                        <a href="#">Mixed Fruits Chocolates Pack</a>
-                      </h4>
-                      <div className="bb-price flex justify-between">
-                        <div>
-                          <span className="new-price text-lg font-bold text-gray-700">$25</span>
-                          <span className="old-price text-sm text-gray-500 line-through ml-2">$30</span>
                         </div>
-                        <span className="last-items text-sm text-gray-500">1 Pack</span>
+                      </div>
+                      <div className="w-[50%] px-[12px] max-[420px]:w-full">
+                        <div className="bb-select-inner h-full py-[10px] flex items-center justify-end max-[420px]:justify-center">
+                          <div className="custom-select w-[130px] mr-[30px] flex justify-end text-[#777]  items-center text-[14px] relative max-[420px]:w-[100px] max-[420px]:justify-left">
+                            <select>
+                              <option selected disabled>
+                                Sort by
+                              </option>
+                              <option value="1">Position</option>
+                              <option value="2">Relevance</option>
+                              <option value="3">Name, A to Z</option>
+                              <option value="4">Name, Z to A</option>
+                              <option value="5">Price, low to high</option>
+                              <option value="6">Price, high to low</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="bb-deal-card p-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                  <div className="bb-pro-box bg-white border border-solid border-gray-200 rounded-2xl">
-                    <div className="bb-pro-img relative border-b border-solid border-gray-200 overflow-hidden rounded-t-2xl">
-                      <span className="flags absolute top-2 left-1.5 z-5">
-                        <span className="text-xs text-gray-500 font-medium uppercase">New</span>
-                      </span>
-                      <a href="#">
-                        <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/image.png" alt="product-1" />
-                      </a>
-                      <ul className="bb-pro-actions absolute left-0 right-0 bottom-0 flex items-center justify-center opacity-0 transition duration-300">
-                        <li className="bb-btn-group">
-                          <button title="Wishlist" className="action-btn">
-                            <i className="ri-heart-line text-lg text-gray-500"></i>
-                          </button>
-                        </li>
-                        <li className="bb-btn-group">
-                          <button title="Quick View" className="action-btn">
-                            <i className="ri-eye-line text-lg text-gray-500"></i>
-                          </button>
-                        </li>
-                        <li className="bb-btn-group">
-                          <a href="compare.html" title="Compare" className="action-btn">
-                            <i className="ri-repeat-line text-lg text-gray-500"></i>
-                          </a>
-                        </li>
-                        <li className="bb-btn-group">
-                          <button title="Add To Cart" className="action-btn">
-                            <i className="ri-shopping-bag-4-line text-lg text-gray-500"></i>
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="bb-pro-contact p-5">
-                      <div className="bb-pro-subtitle flex justify-between mb-2">
-                        <a href="#" className="text-xs text-gray-500 font-light">
-                          Chocos
-                        </a>
-                        <span className="bb-pro-rating">
-                          {[...Array(4)].map((_, i) => (
-                            <i key={i} className="ri-star-fill text-sm text-[#fea99a]"></i>
-                          ))}
-                          <i className="ri-star-line text-sm text-gray-500"></i>
-                        </span>
-                      </div>
-                      <h4 className="bb-pro-title mb-2 text-base font-semibold text-gray-800">
-                        <a href="#">Mixed Fruits Chocolates Pack</a>
-                      </h4>
-                      <div className="bb-price flex justify-between">
-                        <div>
-                          <span className="new-price text-lg font-bold text-gray-700">$25</span>
-                          <span className="old-price text-sm text-gray-500 line-through ml-2">$30</span>
-                        </div>
-                        <span className="last-items text-sm text-gray-500">1 Pack</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="bb-deal-card p-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                  <div className="bb-pro-box bg-white border border-solid border-gray-200 rounded-2xl">
-                    <div className="bb-pro-img relative border-b border-solid border-gray-200 overflow-hidden rounded-t-2xl">
-                      <span className="flags absolute top-2 left-1.5 z-5">
-                        <span className="text-xs text-gray-500 font-medium uppercase">New</span>
-                      </span>
-                      <a href="#">
-                        <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/image.png" alt="product-1" />
-                      </a>
-                      <ul className="bb-pro-actions absolute left-0 right-0 bottom-0 flex items-center justify-center opacity-0 transition duration-300">
-                        <li className="bb-btn-group">
-                          <button title="Wishlist" className="action-btn">
-                            <i className="ri-heart-line text-lg text-gray-500"></i>
-                          </button>
-                        </li>
-                        <li className="bb-btn-group">
-                          <button title="Quick View" className="action-btn">
-                            <i className="ri-eye-line text-lg text-gray-500"></i>
-                          </button>
-                        </li>
-                        <li className="bb-btn-group">
-                          <a href="compare.html" title="Compare" className="action-btn">
-                            <i className="ri-repeat-line text-lg text-gray-500"></i>
-                          </a>
-                        </li>
-                        <li className="bb-btn-group">
-                          <button title="Add To Cart" className="action-btn">
-                            <i className="ri-shopping-bag-4-line text-lg text-gray-500"></i>
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="bb-pro-contact p-5">
-                      <div className="bb-pro-subtitle flex justify-between mb-2">
-                        <a href="#" className="text-xs text-gray-500 font-light">
-                          Chocos
-                        </a>
-                        <span className="bb-pro-rating">
-                          {[...Array(4)].map((_, i) => (
-                            <i key={i} className="ri-star-fill text-sm text-[#fea99a]"></i>
-                          ))}
-                          <i className="ri-star-line text-sm text-gray-500"></i>
-                        </span>
-                      </div>
-                      <h4 className="bb-pro-title mb-2 text-base font-semibold text-gray-800">
-                        <a href="#">Mixed Fruits Chocolates Pack</a>
-                      </h4>
-                      <div className="bb-price flex justify-between">
-                        <div>
-                          <span className="new-price text-lg font-bold text-gray-700">$25</span>
-                          <span className="old-price text-sm text-gray-500 line-through ml-2">$30</span>
-                        </div>
-                        <span className="last-items text-sm text-gray-500">1 Pack</span>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-                {/* <div className="bb-deal-card p-[12px]" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="300">
                   <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
                     <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                       <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
-                        <span className="text-[14px] text-[#777] font-medium uppercase">Hot</span>
+                        <span className="text-[14px] text-[#777] font-medium uppercase">New</span>
                       </span>
                       <a href="javascript:void(0)">
                         <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/2.jpg" alt="product-2" />
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-1" />
                           <img
                             className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                            src="assets/img/product/back-2.jpg"
+                            src="/assets/images/gpu.webp"
+                            alt="product-1"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Snacks
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Ground Nuts Oil Pack
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$15</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span>
+                        </div>
+                        <span className="last-items text-[14px] text-[#686e7d]">500g</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="400">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                        <span className="text-[14px] text-[#777] font-medium uppercase">Trend</span>
+                      </span>
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-2" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
                             alt="product-2"
                           />
                         </div>
@@ -444,29 +464,579 @@ export const DealSection2 = () => {
                         <a
                           href="product-left-sidebar.html"
                           className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
-                          Organic Apple Juice Pack
+                          Organic Litchi Juice Pack
                         </a>
                       </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
                       <div className="bb-price flex flex-wrap justify-between">
                         <div className="inner-price mx-[-3px]">
-                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$15</span>
-                          <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">3 Left</span>
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$25</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$30</span>
                         </div>
-                        <span className="last-items text-[14px] text-[#686e7d]">100 ml</span>
+                        <span className="last-items text-[14px] text-[#686e7d]">100ml</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="bb-deal-card p-[12px]" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="500">
                   <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
                     <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                       <a href="javascript:void(0)">
                         <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/3.jpg" alt="product-3" />
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-3" />
                           <img
                             className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                            src="assets/img/product/back-3.jpg"
+                            src="/assets/images/gpu.webp"
                             alt="product-3"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Chips
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Crunchy Banana Chips
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$1</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$02</span>
+                        </div>
+                        <span className="last-items text-[14px] text-[#686e7d]">100g</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="600">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-4" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-4"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Chips
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Crunchy Potato Chips
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$25</span>
+                          <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">Out Of Stock</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="700">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-5" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-5"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Spices
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Black Pepper Spice pack
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$32</span>
+                          <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">2 Left</span>
+                        </div>
+                        <span className="last-items text-[14px] text-[#686e7d]">1 pack</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="300">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                        <span className="text-[14px] text-[#777] font-medium uppercase">Sale</span>
+                      </span>
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-6" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-6"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Spices
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Small Cardamom Spice Pack
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$41</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$45</span>
+                        </div>
+                        <span className="last-items text-[14px] text-[#686e7d]">200g</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="400">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                        <span className="text-[14px] text-[#777] font-medium uppercase">New</span>
+                      </span>
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-7" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-7"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Spices
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Chilli Flakes Pack
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$29</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$31</span>
+                        </div>
+                        <span className="last-items text-[14px] text-[#686e7d]">250g</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="500">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-8" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-8"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Sauces
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Tomato Ketchup Pack
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$9</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$10</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="600">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                        <span className="text-[14px] text-[#777] font-medium uppercase">New</span>
+                      </span>
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-1" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-1"
+                          />
+                        </div>
+                      </a>
+                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
+                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
+                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bb-pro-contact p-[20px]">
+                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                        <a
+                          href="shop-left-sidebar-col-3.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+                          Snacks
+                        </a>
+                        <span className="bb-pro-rating">
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
+                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                        </span>
+                      </div>
+                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                        <a
+                          href="product-left-sidebar.html"
+                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
+                          Ground Nuts Oil Pack
+                        </a>
+                      </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
+                      <div className="bb-price flex flex-wrap justify-between">
+                        <div className="inner-price mx-[-3px]">
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$15</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span>
+                        </div>
+                        <span className="last-items text-[14px] text-[#686e7d]">500g</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="700">
+                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
+                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
+                      <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                        <span className="text-[14px] text-[#777] font-medium uppercase">Trend</span>
+                      </span>
+                      <a href="javascript:void(0)">
+                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
+                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="/assets/images/gpu.webp" alt="product-2" />
+                          <img
+                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
+                            src="/assets/images/gpu.webp"
+                            alt="product-2"
                           />
                         </div>
                       </a>
@@ -512,89 +1082,65 @@ export const DealSection2 = () => {
                         <a
                           href="product-left-sidebar.html"
                           className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
-                          Mixed Almond nuts juice Pack
+                          Organic Litchi Juice Pack
                         </a>
                       </h4>
+                      <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque consectetur sit mollitia nihil magnam perspiciatis eos atque qui cupiditate delectus.
+                        Provident totam optio sapiente nam.
+                      </p>
                       <div className="bb-price flex flex-wrap justify-between">
                         <div className="inner-price mx-[-3px]">
-                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$32</span>
-                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$39</span>
+                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$25</span>
+                          <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$30</span>
                         </div>
-                        <span className="last-items text-[14px] text-[#686e7d]">250 g</span>
+                        <span className="last-items text-[14px] text-[#686e7d]">100ml</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="bb-deal-card p-[12px]" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-                  <div className="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
-                    <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
-                      <span className="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
-                        <span className="text-[14px] text-[#777] font-medium uppercase">Sale</span>
-                      </span>
-                      <a href="javascript:void(0)">
-                        <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                          <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/4.jpg" alt="product-4" />
-                          <img
-                            className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                            src="assets/img/product/back-4.jpg"
-                            alt="product-4"
-                          />
-                        </div>
-                      </a>
-                      <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
-                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                          <a href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
-                            <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                          </a>
-                        </li>
-                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                          <a href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
-                            <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                          </a>
-                        </li>
-                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                          <a href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
-                            <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                          </a>
-                        </li>
-                        <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                          <a href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
-                            <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="bb-pro-contact p-[20px]">
-                      <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
+                <div className="w-full px-[12px]">
+                  <div className="bb-pro-pagination mb-[24px] flex justify-between max-[575px]:flex-col max-[575px]:items-center">
+                    <p className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] max-[575px]:mb-[10px]">Showing 1-12 of 21 item(s)</p>
+                    <ul className="flex">
+                      <li className="leading-[28px] mr-[6px] active">
                         <a
-                          href="shop-left-sidebar-col-3.html"
-                          className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
-                          Fruits
+                          href="javascript:void(0)"
+                          className="transition-all duration-[0.3s] ease-in-out w-[32px] h-[32px] font-light text-[#777] leading-[32px] bg-[#f8f8fb] font-Poppins tracking-[0.03rem] text-[15px] flex text-center align-top justify-center items-center rounded-[10px] border-[1px] border-solid border-[#eee] hover:bg-[#3d4750] hover:text-[#fff]">
+                          1
                         </a>
-                        <span className="bb-pro-rating">
-                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                          <i className="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                          <i className="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
-                        </span>
-                      </div>
-                      <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
+                      </li>
+                      <li className="leading-[28px] mr-[6px]">
                         <a
-                          href="product-left-sidebar.html"
-                          className="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
-                          Fresh Mango Slice Juice
+                          href="javascript:void(0)"
+                          className="transition-all duration-[0.3s] ease-in-out w-[32px] h-[32px] font-light text-[#777] leading-[32px] bg-[#f8f8fb] font-Poppins tracking-[0.03rem] text-[15px] flex text-center align-top justify-center items-center rounded-[10px] border-[1px] border-solid border-[#eee] hover:bg-[#3d4750] hover:text-[#fff]">
+                          2
                         </a>
-                      </h4>
-                      <div className="bb-price flex flex-wrap justify-between">
-                        <div className="inner-price mx-[-3px]">
-                          <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$25</span>
-                          <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">Out Of Stock</span>
-                        </div>
-                      </div>
-                    </div>
+                      </li>
+                      <li className="leading-[28px] mr-[6px]">
+                        <a
+                          href="javascript:void(0)"
+                          className="transition-all duration-[0.3s] ease-in-out w-[32px] h-[32px] font-light text-[#777] leading-[32px] bg-[#f8f8fb] font-Poppins tracking-[0.03rem] text-[15px] flex text-center align-top justify-center items-center rounded-[10px] border-[1px] border-solid border-[#eee] hover:bg-[#3d4750] hover:text-[#fff]">
+                          3
+                        </a>
+                      </li>
+                      <li className="leading-[28px] mr-[6px]">
+                        <a
+                          href="javascript:void(0)"
+                          className="transition-all duration-[0.3s] ease-in-out w-[32px] h-[32px] font-light text-[#777] leading-[32px] bg-[#f8f8fb] font-Poppins tracking-[0.03rem] text-[15px] flex text-center align-top justify-center items-center rounded-[10px] border-[1px] border-solid border-[#eee] hover:bg-[#3d4750] hover:text-[#fff]">
+                          4
+                        </a>
+                      </li>
+                      <li className="leading-[28px]">
+                        <a
+                          href="javascript:void(0)"
+                          className="next transition-all duration-[0.3s] ease-in-out w-[auto] h-[32px] px-[13px] font-light text-[#fff] leading-[30px] bg-[#3d4750] font-Poppins tracking-[0.03rem] text-[15px] flex text-center align-top justify-center items-center rounded-[10px] border-[1px] border-solid border-[#eee]">
+                          Next <i className="ri-arrow-right-s-line transition-all duration-[0.3s] ease-in-out ml-[10px] text-[16px] w-[8px] text-[#fff]"></i>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

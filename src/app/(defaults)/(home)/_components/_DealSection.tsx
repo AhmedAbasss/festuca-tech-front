@@ -71,10 +71,10 @@ export const DealSection = () => {
                         </span>
                         <a href="javascript:void(0)">
                           <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/image.png" alt="product-1" />
+                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/gpu.webp" alt="product-1" />
                             <img
                               className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                              src="assets/images/image.png"
+                              src="assets/images/gpu.webp"
                               alt="product-1"
                             />
                           </div>
@@ -143,10 +143,10 @@ export const DealSection = () => {
                       <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                         <a href="javascript:void(0)">
                           <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/image.png" alt="product-3" />
+                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/gpu.webp" alt="product-3" />
                             <img
                               className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                              src="assets/images/image.png"
+                              src="assets/images/gpu.webp"
                               alt="product-3"
                             />
                           </div>
@@ -218,10 +218,10 @@ export const DealSection = () => {
                         </span>
                         <a href="javascript:void(0)">
                           <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/image.png" alt="product-4" />
+                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/gpu.webp" alt="product-4" />
                             <img
                               className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                              src="assets/images/image.png"
+                              src="assets/images/gpu.webp"
                               alt="product-4"
                             />
                           </div>
@@ -289,10 +289,10 @@ export const DealSection = () => {
                       <div className="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                         <a href="javascript:void(0)">
                           <div className="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/image.png" alt="product-4" />
+                            <img className="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/images/gpu.webp" alt="product-4" />
                             <img
                               className="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                              src="assets/images/image.png"
+                              src="assets/images/gpu.webp"
                               alt="product-4"
                             />
                           </div>
