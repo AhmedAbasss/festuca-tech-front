@@ -1,6 +1,80 @@
 "use client";
 import React from "react";
 import "remixicon/fonts/remixicon.css";
+import { ProductItem } from "../_prodect/_productItem";
+
+const exampleData = [
+  {
+    title: "Geforce RTX 3060 ventus 2x",
+    description: "High-quality wireless headphones with noise cancellation and long battery life.",
+    url: "/gg",
+    label: "NEW",
+    image: "/assets/images/gpu.webp",
+    altImage: "/assets/images/gpu.webp",
+    category: "GPU",
+    price: "$400",
+    discount: "20%",
+    stock: "available",
+    note: "",
+    stars: 4,
+  },
+  {
+    title: "Geforce RTX 3060 ventus 2x",
+    description: "High-quality wireless headphones with noise cancellation and long battery life.",
+    url: "/gg",
+    label: "NEW",
+    image: "/assets/images/gpu.webp",
+    altImage: "/assets/images/gpu.webp",
+    category: "GPU",
+    price: "$400",
+    discount: "20%",
+    stock: "available",
+    note: "",
+    stars: 4,
+  },
+  {
+    title: "Geforce RTX 3060 ventus 2x",
+    description: "High-quality wireless headphones with noise cancellation and long battery life.",
+    url: "/gg",
+    label: "NEW",
+    image: "/assets/images/gpu.webp",
+    altImage: "/assets/images/gpu.webp",
+    category: "GPU",
+    price: "$400",
+    discount: "20%",
+    stock: "available",
+    note: "",
+    stars: 4,
+  },
+  {
+    title: "Geforce RTX 3060 ventus 2x",
+    description: "High-quality wireless headphones with noise cancellation and long battery life.",
+    url: "/gg",
+    label: "NEW",
+    image: "/assets/images/gpu.webp",
+    altImage: "/assets/images/gpu.webp",
+    category: "GPU",
+    price: "$400",
+    discount: "20%",
+    stock: "available",
+    note: "",
+    stars: 4,
+  },
+  {
+    title: "Geforce RTX 3060 ventus 2x",
+    description: "High-quality wireless headphones with noise cancellation and long battery life.",
+    url: "/gg",
+    label: "NEW",
+    image: "/assets/images/gpu.webp",
+    altImage: "/assets/images/gpu.webp",
+    category: "GPU",
+    price: "$400",
+    discount: "20%",
+    stock: "available",
+    note: "",
+    stars: 3,
+  },
+];
 
 export const DealSection2 = () => {
   return (
@@ -321,7 +395,27 @@ export const DealSection2 = () => {
                     </div>
                   </div>
                 </div>
-                <div
+
+                {exampleData.map((item) => (
+                  <ProductItem
+                    data={{
+                      title: item.title,
+                      description: item.description,
+                      url: item.url,
+                      label: item.label,
+                      image: item.image,
+                      altImage: item.altImage,
+                      category: item.category,
+                      price: item.price,
+                      discount: item.discount,
+                      stock: item.stock,
+                      note: item.note,
+                      stars: item.stars,
+                    }}
+                  />
+                ))}
+
+                {/* <div
                   className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
                   data-aos="fade-up"
                   data-aos-duration="1000"
@@ -1097,7 +1191,8 @@ export const DealSection2 = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
+
                 <div className="w-full px-[12px]">
                   <div className="bb-pro-pagination mb-[24px] flex justify-between max-[575px]:flex-col max-[575px]:items-center">
                     <p className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] max-[575px]:mb-[10px]">Showing 1-12 of 21 item(s)</p>

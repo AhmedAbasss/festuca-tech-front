@@ -20,7 +20,7 @@ interface dataTypes {
   };
 }
 
-export const DealSection2: React.FC<dataTypes> = ({ data }) => {
+export const ProductItem: React.FC<dataTypes> = ({ data }) => {
   return (
     <div
       className="min-[1200px]:w-[20%] min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
@@ -64,17 +64,20 @@ export const DealSection2: React.FC<dataTypes> = ({ data }) => {
 
         <div className="bb-pro-contact p-[20px]">
           <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
-            <Link
-              href="shop-left-sidebar-col-3.html"
-              className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
+            <Link href={data?.url} className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
               {data?.category}
             </Link>
 
-            <span className="bb-pro-rating">
-              {Array.from({ length: 5 }, (_, index) => (
-                <i key={index} className={"float-left text-[15px] mr-[3px] leading-[18px]" + (index < data?.stars ? "ri-star-fill text-[#fea99a]" : "ri-star-line text-[#777]")} />
-              ))}
-            </span>
+            <Link href={data?.url}>
+              <span className="bb-pro-rating">
+                {Array.from({ length: 5 }, (_, index) => (
+                  <i
+                    key={index}
+                    className={"float-left text-[15px] mr-[3px] leading-[18px] " + (index < data?.stars ? "ri-star-fill text-[#fea99a]" : "ri-star-line text-[#777]")}
+                  />
+                ))}
+              </span>
+            </Link>
           </div>
           <h4 className="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
             <Link
@@ -85,12 +88,14 @@ export const DealSection2: React.FC<dataTypes> = ({ data }) => {
           </h4>
           <p className="hidden font-Poppins text-[14px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">{data?.description}</p>
           <div className="bb-price flex flex-wrap justify-between">
-            <div className="inner-price mx-[-3px]">
-              <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">{data?.price}</span>
-              <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">{data?.discount}</span>
-              <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">{data?.stock}</span>
-            </div>
-            <span className="last-items text-[14px] text-[#686e7d]">{data?.note}</span>
+            <Link href={data?.url}>
+              <div className="inner-price mx-[-3px]">
+                <span className="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">{data?.price}</span>
+                <span className="old-price px-[3px] text-[14px] text-[#686e7d] line-through">{data?.discount}</span>
+                <span className="item-left px-[3px] text-[14px] text-[#6c7fd8]">{data?.stock}</span>
+              </div>
+              <span className="last-items text-[14px] text-[#686e7d]">{data?.note}</span>
+            </Link>
           </div>
         </div>
       </div>
