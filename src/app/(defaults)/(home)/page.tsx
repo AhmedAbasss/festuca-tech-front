@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import { DealSection2 } from "./_components/_DealSection2";
 import { Features } from "./_components/Features";
@@ -11,7 +12,7 @@ const Page = async () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setPageTitle(t("hotel")));
+    dispatch(setPageTitle(t("home")));
   });
   return (
     <div className="overflow-hidden">
