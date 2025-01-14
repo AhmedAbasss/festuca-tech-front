@@ -39,22 +39,22 @@ export const ProductItem: React.FC<dataTypes> = ({ data }) => {
             </div>
           </Link>
           <ul className="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
-            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
+            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-primary-light dark:bg-primary-dark border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
               <Link href="javascript:void(0)" title="Wishlist" className="w-[35px] h-[35px] flex items-center justify-center">
                 <i className="ri-heart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
               </Link>
             </li>
-            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
+            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-primary-light dark:bg-primary-dark border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
               <Link href="javascript:void(0)" title="Quick View" className="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
                 <i className="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
               </Link>
             </li>
-            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
+            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-primary-light dark:bg-primary-dark border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
               <Link href="compare.html" title="Compare" className="w-[35px] h-[35px] flex items-center justify-center">
                 <i className="ri-repeat-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
               </Link>
             </li>
-            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
+            <li className="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-primary-light dark:bg-primary-dark border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px]">
               <Link href="javascript:void(0)" title="Add To Cart" className="w-[35px] h-[35px] flex items-center justify-center">
                 <i className="ri-shopping-bag-4-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
               </Link>
