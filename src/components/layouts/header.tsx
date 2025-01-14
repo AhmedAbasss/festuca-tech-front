@@ -177,9 +177,9 @@ export const Header = () => {
                 <div className="cols bb-logo-detail flex max-[767px]:justify-between">
                   <div className="header-logo flex items-center max-[575px]:justify-center">
                     <a href="index.html">
+                      {/* <img src="/logo.svg" alt="logo" className="light w-[50px] max-[991px]:w-[115px] block" /> */}
                       <img src="/logo.svg" alt="logo" className="light w-[50px] max-[991px]:w-[115px] block" />
-                      {/* <img src="/logo.svg" alt="logo" className="light w-[125px] max-[991px]:w-[115px] block" /> */}
-                      {/* <img src="assets/img/logo/logo-dark.png" alt="logo" className="dark w-[125px] max-[991px]:w-[115px] hidden" /> */}
+                      <img src="/logo.svg" alt="logo" className="dark w-[50px] max-[991px]:w-[115px] hidden" />
                     </a>
                   </div>
                   <a
