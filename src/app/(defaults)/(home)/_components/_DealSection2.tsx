@@ -1,8 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import { IRootState } from "@/store";
-import Link from "next/link";
+import React from "react";
 import "remixicon/fonts/remixicon.css";
 
 export const DealSection2 = () => {

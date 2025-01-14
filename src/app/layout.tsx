@@ -1,4 +1,4 @@
-import ProviderComponent from "@/components/layouts/provider-component";
+import ProviderComponent from "@/components/providers/provider-component";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import "../styles/tailwind.css";
 import { Nunito } from "next/font/google";
@@ -8,8 +8,8 @@ import "mantine-datatable/styles.layer.css";
 import type { Metadata, Viewport } from "next";
 
 const APP_NAME = "appName App";
-const APP_DEFAULT_TITLE = " %s | My Awesome appName App";
-const APP_TITLE_TEMPLATE = "%s - appName App";
+const APP_DEFAULT_TITLE = " Home | appName App";
+const APP_TITLE_TEMPLATE = "Home - appName App";
 const APP_DESCRIPTION = "Best appName App in the world!";
 
 export const metadata: Metadata = {

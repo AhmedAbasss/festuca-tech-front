@@ -53,6 +53,7 @@
     "react-select": "^5.8.0",
     "react-toastify": "^10.0.5",
     "remixicon": "^4.6.0",
+    "sonner": "^1.7.1",
     "styled-components": "^6.1.14",
     "tailwind-merge": "^2.6.0",
     "typed.js": "^2.1.0",
