@@ -3,34 +3,27 @@ import React, { useEffect } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-
 export const Categories = () => {
-  // const options = {
-  //   margin: 30,
-  //   responsiveClass: true,
-  //   nav: true,
-  //   dots: false,
-  //   autoplay: true,
-  //   smartSpeed: 1000,
-  //   navText: ["<", ">"],
-  //   responsive: {
-  //     0: {
-  //       items: 1,
-  //     },
-  //     600: {
-  //       items: 2,
-  //     },
-  //     1000: {
-  //       items: 3,
-  //     },
-  //   },
-  // };
-
-  // useEffect(() => {
-  //   AOS.init();
-  // }, []);
+  const options = {
+    margin: 30,
+    responsiveClass: true,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    smartSpeed: 1000,
+    navText: ["<", ">"],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
 
   return (
     <section className="section-category pt-[50px] max-[1199px]:pt-[35px] mb-[24px]">
