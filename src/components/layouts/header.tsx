@@ -22,9 +22,9 @@ export const MainMenu: React.FC<MainMenuProps> = ({ menuItems }) => {
       <ul className="navbar-nav flex flex-wrap flex-row">
         {menuItems.map((item, index) => (
           <li key={index} className="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[45px]">
-            <a className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-secbg-secondary flex" href="offer.html">
+            <Link className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-secbg-secondary flex" href="offer.html">
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -87,78 +87,78 @@ export const Header = () => {
             <div className="w-full px-[12px]">
               <div className="inner-top-header flex justify-between">
                 <div className="col-left-bar">
-                  <a
+                  <Link
                     href="shop-left-sidebar-col-3.html"
                     className="transition-all duration-[0.3s] ease-in-out font-Poppins font-light text-[14px] text-[#fff] leading-[28px] tracking-[0.03rem]">
                     Flat 50% Off On Grocery Shop.
-                  </a>
+                  </Link>
                 </div>
                 <div className="col-right-bar flex">
                   <div className="cols px-[12px]">
-                    <a href="faq.html" className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] font-light leading-[28px] tracking-[0.03rem]">
+                    <Link href="faq.html" className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] font-light leading-[28px] tracking-[0.03rem]">
                       Help?
-                    </a>
+                    </Link>
                   </div>
                   <div className="cols px-[12px]">
-                    <a
+                    <Link
                       href="track-order.html"
                       className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] font-light leading-[28px] tracking-[0.03rem]">
                       Track Order
-                    </a>
+                    </Link>
                   </div>
                   <div className="cols px-[12px]">
                     <div className="custom-dropdown relative z-[5]">
-                      <a
+                      <Link
                         className="bb-dropdown-toggle transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] relative pr-[15px] font-light leading-[28px] tracking-[0.03rem]"
                         href="#">
                         Language
-                      </a>
+                      </Link>
                       <ul className="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] block rounded-[10px]">
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                          <a
+                          <Link
                             href="javascript:void(0)"
                             className="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">
                             English
-                          </a>
+                          </Link>
                         </li>
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                          <a
+                          <Link
                             href="javascript:void(0)"
                             className="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">
                             Hindi
-                          </a>
+                          </Link>
                         </li>
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                          <a
+                          <Link
                             href="javascript:void(0)"
                             className="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">
                             Gujarati
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div className="cols px-[12px]">
                     <div className="custom-dropdown relative z-[5]">
-                      <a
+                      <Link
                         className="bb-dropdown-toggle transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] relative pr-[15px] font-light leading-[28px] tracking-[0.03rem]"
                         href="#">
                         Currency
-                      </a>
+                      </Link>
                       <ul className="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] block rounded-[10px]">
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                          <a
+                          <Link
                             href="javascript:void(0)"
                             className="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">
                             USD $
-                          </a>
+                          </Link>
                         </li>
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                          <a
+                          <Link
                             href="javascript:void(0)"
                             className="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">
                             EUR €
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -176,13 +176,13 @@ export const Header = () => {
               <div className="inner-bottom-header flex justify-between max-[767px]:flex-col">
                 <div className="cols bb-logo-detail flex max-[767px]:justify-between">
                   <div className="header-logo flex items-center max-[575px]:justify-center">
-                    <a href="index.html">
+                    <Link href="index.html">
                       {/* <img src="/logo.svg" alt="logo" className="light w-[50px] max-[991px]:w-[115px] block" /> */}
                       <img src="/logo.svg" alt="logo" className="light w-[50px] max-[991px]:w-[115px] block" />
                       <img src="/logo.svg" alt="logo" className="dark w-[50px] max-[991px]:w-[115px] hidden" />
-                    </a>
+                    </Link>
                   </div>
-                  <a
+                  <Link
                     href="javascript:void(0)"
                     className="bb-sidebar-toggle bb-category-toggle hidden max-[991px]:flex max-[991px]:items-center max-[991px]:ml-[20px] max-[991px]:border-[1px] max-[991px]:border-solid max-[991px]:border-[#eee] max-[991px]:w-[40px] max-[991px]:h-[40px] max-[991px]:rounded-[15px] justify-center transition-all duration-[0.3s] ease-in-out font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
                     <svg className="svg-icon h-[30px] w-[30px] max-[991px]:w-[22px] max-[991px]:h-[22px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -191,7 +191,7 @@ export const Header = () => {
                         d="M384 928H192a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 608a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V640a32 32 0 0 0-32-32H192zM784 928H640a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v144a32 32 0 0 1-64 0V640a32 32 0 0 0-32-32H640a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h144a32 32 0 0 1 0 64zM384 480H192a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H192zM832 480H640a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM640 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H640z"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
                 <div className="cols flex justify-center">
                   <div className="header-search w-[600px] max-[1399px]:w-[500px] max-[1199px]:w-[400px] max-[991px]:w-full max-[991px]:min-w-[300px] max-[767px]:py-[15px] max-[480px]:min-w-[auto]">
@@ -223,7 +223,7 @@ export const Header = () => {
                   <div className="bb-flex-justify max-[575px]:flex max-[575px]:justify-between">
                     <div className="bb-header-buttons h-full flex justify-end items-center">
                       <div className="bb-acc-drop relative">
-                        <a
+                        <Link
                           href="javascript:void(0)"
                           className="bb-header-btn bb-header-user dropdown-toggle bb-user-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center whitespace-nowrap ml-[30px] max-[1199px]:ml-[20px] max-[767px]:ml-[0]"
                           title="Account">
@@ -247,32 +247,32 @@ export const Header = () => {
                               Login
                             </span>
                           </div>
-                        </a>
+                        </Link>
                         <ul className="bb-dropdown-menu min-w-[150px] py-[10px] px-[5px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute z-[16] text-left opacity-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] block rounded-[10px]">
                           <li className="py-[4px] px-[15px] m-[0] font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                            <a
+                            <Link
                               className="dropdown-item transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] hover:text-[#6c7fd8] leading-[22px] block w-full font-normal tracking-[0.03rem]"
                               href="register.html">
                               Register
-                            </a>
+                            </Link>
                           </li>
                           <li className="py-[4px] px-[15px] m-[0] font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                            <a
+                            <Link
                               className="dropdown-item transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] hover:text-[#6c7fd8] leading-[22px] block w-full font-normal tracking-[0.03rem]"
                               href="checkout.html">
                               Checkout
-                            </a>
+                            </Link>
                           </li>
                           <li className="py-[4px] px-[15px] m-[0] font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                            <a
+                            <Link
                               className="dropdown-item transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] hover:text-[#6c7fd8] leading-[22px] block w-full font-normal tracking-[0.03rem]"
                               href="login.html">
                               Login
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
-                      <a
+                      <Link
                         href="wishlist.html"
                         className="bb-header-btn bb-wish-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                         title="Wishlist">
@@ -297,8 +297,8 @@ export const Header = () => {
                             Wishlist
                           </span>
                         </div>
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="javascript:void(0)"
                         className="bb-header-btn bb-cart-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                         title="Cart">
@@ -323,12 +323,12 @@ export const Header = () => {
                             Cart
                           </span>
                         </div>
-                      </a>
-                      <a href="javascript:void(0)" className="bb-toggle-menu hidden max-[991px]:flex max-[991px]:ml-[20px]">
+                      </Link>
+                      <Link href="javascript:void(0)" className="bb-toggle-menu hidden max-[991px]:flex max-[991px]:ml-[20px]">
                         <div className="header-icon">
                           <i className="ri-menu-3-fill text-[22px] text-[#6c7fd8]"></i>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -342,7 +342,7 @@ export const Header = () => {
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
               <div className="bb-inner-menu-desk flex max-[1199px]:relative max-[991px]:justify-between">
-                <a
+                <Link
                   href="javascript:void(0)"
                   className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-primary-light border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
                   <svg className="svg-icon w-[25px] h-[25px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -351,7 +351,7 @@ export const Header = () => {
                       d="M384 928H192a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 608a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V640a32 32 0 0 0-32-32H192zM784 928H640a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v144a32 32 0 0 1-64 0V640a32 32 0 0 0-32-32H640a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h144a32 32 0 0 1 0 64zM384 480H192a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H192zM832 480H640a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM640 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H640z"
                     />
                   </svg>
-                </a>
+                </Link>
                 <button
                   className="navbar-toggler shadow-none hidden"
                   type="button"
