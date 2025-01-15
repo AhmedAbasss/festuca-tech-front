@@ -11,7 +11,7 @@ import { getTranslation } from "../../../ni18n/i18n";
 // TODO move this component to other file
 interface MenuItem {
   label: React.ReactNode;
-  href: string;
+  url: string;
 }
 interface MainMenuProps {
   menuItems: MenuItem[];
@@ -22,7 +22,7 @@ export const MainMenu: React.FC<MainMenuProps> = ({ menuItems }) => {
       <ul className="navbar-nav flex flex-wrap flex-row">
         {menuItems.map((item, index) => (
           <li key={index} className="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[45px]">
-            <Link className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-secbg-secondary flex" href="offer.html">
+            <Link className="nav-link font-Poppins p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-secbg-secondary flex" href={item.url}>
               {item.label}
             </Link>
           </li>
@@ -364,11 +364,11 @@ export const Header = () => {
                 </button>
                 <MainMenu
                   menuItems={[
-                    { label: "Home", href: "index.html" },
-                    { label: "Categories", href: "Categories.html" },
-                    { label: "Products", href: "Products.html" },
-                    { label: "Pages", href: "Pages.html" },
-                    { label: "Blog", href: "Blog.html" },
+                    { label: "Home", url: "/" },
+                    { label: "Categories", url: "/category" },
+                    { label: "Products", url: "Products" },
+                    { label: "Pages", url: "Pages.html" },
+                    { label: "Blog", url: "Blog.html" },
                     {
                       label: (
                         <>
@@ -395,7 +395,7 @@ export const Header = () => {
                           Offers
                         </>
                       ),
-                      href: "Offers.html",
+                      url: "Offers.html",
                     },
                   ]}
                 />

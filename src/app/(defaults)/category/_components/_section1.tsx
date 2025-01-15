@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "remixicon/fonts/remixicon.css";
-import { ProductItem } from "../_prodect/_productItem";
+import { ProductItem } from "../../../../components/common/productItem";
 
 const exampleData = [
   {
