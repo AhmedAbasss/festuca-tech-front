@@ -354,7 +354,7 @@ export const DealSection2 = () => {
             <div className="bb-shop-pro-inner">
               <div className="flex flex-wrap mx-[-12px] mb-[-24px]">
                 <div className="w-full px-[12px]">
-                  <div className="bb-pro-list-top my-[24px] rounded-[20px] flex bg-primary-light border-[1px] border-solid border-[#eee] dark:border-[#494E5D]  justify-between">
+                  <div className="bb-pro-list-top my-[24px] rounded-[20px] flex bg-primary-light dark:bg-secondary-dark border-[1px] border-solid border-[#eee] dark:border-[#494E5D]  justify-between">
                     <div className="flex flex-wrap w-full">
                       <div className="w-[50%] px-[12px] max-[420px]:w-full">
                         <div className="bb-bl-btn py-[10px] flex max-[420px]:justify-center">

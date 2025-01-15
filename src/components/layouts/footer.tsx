@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bb-footer mt-[50px] bg-secondary-light max-[1199px]:mt-[35px] text-[#fff]">
-      <div className="footer-container border-t-[1px] border-solid border-[#eee]">
+    <footer className="bb-footer mt-[50px] bg-secondary-light dark:bg-secondary-dark max-[1199px]:mt-[35px] text-[#fff]">
+      <div className="footer-container border-t-[1px] border-solid border-[#eee] dark:border-[#444856] ">
         <div className="footer-top py-[50px] max-[1199px]:py-[35px]">
           <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
             <div className="flex flex-wrap w-full max-[991px]:mb-[-30px]" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
               <div className="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-info">
                 <div className="bb-footer-widget">
-                  <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
+                  <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] dark:text-primary-light tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] dark:border-[#444856]  max-[991px]:text-[14px]">
                     Category
                   </h4>
                   <div className="bb-footer-links bb-footer-dropdown max-[991px]:mb-[35px]">
@@ -84,7 +84,7 @@ const Footer = () => {
               </div>
               <div className="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-account">
                 <div className="bb-footer-widget">
-                  <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
+                  <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] dark:text-primary-light tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] dark:border-[#444856]  max-[991px]:text-[14px]">
                     Company
                   </h4>
                   <div className="bb-footer-links bb-footer-dropdown max-[991px]:mb-[35px]">
@@ -138,7 +138,7 @@ const Footer = () => {
               </div>
               <div className="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-service">
                 <div className="bb-footer-widget">
-                  <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
+                  <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] dark:text-primary-light tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] dark:border-[#444856]  max-[991px]:text-[14px]">
                     Account
                   </h4>
                   <div className="bb-footer-links bb-footer-dropdown max-[991px]:mb-[35px]">
@@ -193,7 +193,7 @@ const Footer = () => {
               <div className="min-[992px]:w-[25%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-cont-social">
                 <div className="bb-footer-contact mb-[30px]">
                   <div className="bb-footer-widget">
-                    <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
+                    <h4 className="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] dark:text-primary-light tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] dark:border-[#444856]  max-[991px]:text-[14px]">
                       Contact
                     </h4>
                     <div className="bb-footer-links bb-footer-dropdown max-[991px]:mb-[35px]">
@@ -271,7 +271,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-bottom py-[10px] border-t-[1px] border-solid border-[#eee] max-[991px]:py-[15px]">
+        <div className="footer-bottom py-[10px] border-t-[1px] border-solid border-[#eee] dark:border-[#444856]  max-[991px]:py-[15px]">
           <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
             <div className="flex flex-wrap w-full">
               <div className="bb-bottom-info w-full flex flex-row items-center justify-between max-[991px]:flex-col px-[12px]">

@@ -62,7 +62,7 @@ export const ProductItem: React.FC<dataTypes> = ({ data }) => {
           </ul>
         </div>
 
-        <div className="bb-pro-contact p-[20px] dark:bg-primary-dark">
+        <div className="bb-pro-contact p-[20px]">
           <div className="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
             <Link href={data?.url} className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">
               {data?.category}

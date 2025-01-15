@@ -80,8 +80,8 @@ export const Header = () => {
   };
 
   return (
-    <header className="bb-header relative z-[5] border-b-[1px] border-solid border-[#eee]">
-      <div className="top-header bg-secondary py-[6px] max-[991px]:hidden">
+    <header className="bb-header relative z-[5] border-b-[1px] border-solid border-[#eee] dark:border-[#494E5D] ">
+      <div className="top-header bg-secondary dark:bg-secondary-dark py-[6px] max-[991px]:hidden">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
@@ -113,7 +113,7 @@ export const Header = () => {
                         href="#">
                         Language
                       </Link>
-                      <ul className="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] block rounded-[10px]">
+                      <ul className="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] block rounded-[10px]">
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
                           <Link
                             href="javascript:void(0)"
@@ -145,7 +145,7 @@ export const Header = () => {
                         href="#">
                         Currency
                       </Link>
-                      <ul className="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] block rounded-[10px]">
+                      <ul className="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] block rounded-[10px]">
                         <li className="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
                           <Link
                             href="javascript:void(0)"
@@ -169,7 +169,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bottom-header bg-primary-light py-[20px] max-[991px]:py-[15px]">
+      <div className="bottom-header bg-primary-light dark:bg-primary-dark py-[20px] max-[991px]:py-[15px]">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
@@ -184,7 +184,7 @@ export const Header = () => {
                   </div>
                   <Link
                     href="javascript:void(0)"
-                    className="bb-sidebar-toggle bb-category-toggle hidden max-[991px]:flex max-[991px]:items-center max-[991px]:ml-[20px] max-[991px]:border-[1px] max-[991px]:border-solid max-[991px]:border-[#eee] max-[991px]:w-[40px] max-[991px]:h-[40px] max-[991px]:rounded-[15px] justify-center transition-all duration-[0.3s] ease-in-out font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
+                    className="bb-sidebar-toggle bb-category-toggle hidden max-[991px]:flex max-[991px]:items-center max-[991px]:ml-[20px] max-[991px]:border-[1px] max-[991px]:border-solid max-[991px]:border-[#eee] dark:border-[#494E5D] max-[991px]:w-[40px] max-[991px]:h-[40px] max-[991px]:rounded-[15px] justify-center transition-all duration-[0.3s] ease-in-out font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
                     <svg className="svg-icon h-[30px] w-[30px] max-[991px]:w-[22px] max-[991px]:h-[22px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
                       <path
                         className="fill-[#6c7fd8]"
@@ -196,7 +196,7 @@ export const Header = () => {
                 <div className="cols flex justify-center">
                   <div className="header-search w-[600px] max-[1399px]:w-[500px] max-[1199px]:w-[400px] max-[991px]:w-full max-[991px]:min-w-[300px] max-[767px]:py-[15px] max-[480px]:min-w-[auto]">
                     <form className="bb-btn-group-form flex relative max-[991px]:ml-[20px] max-[767px]:m-[0]" action="#">
-                      <div className="inner-select border-r-[1px] border-solid border-[#eee] h-full px-[20px] flex items-center absolute top-[0] left-[0] max-[991px]:hidden">
+                      <div className="inner-select border-r-[1px] border-solid border-[#eee] dark:border-[#494E5D] h-full px-[20px] flex items-center absolute top-[0] left-[0] max-[991px]:hidden">
                         <div className="custom-select w-[100px] capitalize text-[#777] flex items-center justify-between transition-all duration-[0.2s] ease-in text-[14px] relative">
                           <select>
                             <option value="option1">vegetables</option>
@@ -207,7 +207,7 @@ export const Header = () => {
                         </div>
                       </div>
                       <input
-                        className="form-control bb-search-bar bg-[#fff] block w-full min-h-[45px] h-[48px] py-[10px] pr-[10px] pl-[160px] max-[991px]:min-h-[40px] max-[991px]:h-[40px] max-[991px]:p-[10px] text-[14px] font-normal leading-[1] text-[#777] rounded-[10px] border-[1px] border-solid border-[#eee] tracking-[0.5px]"
+                        className="form-control bb-search-bar bg-primary-light dark:bg-primary-dark block w-full min-h-[45px] h-[48px] py-[10px] pr-[10px] pl-[160px] max-[991px]:min-h-[40px] max-[991px]:h-[40px] max-[991px]:p-[10px] text-[14px] font-normal leading-[1] text-[#777] rounded-[10px] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] tracking-[0.5px]"
                         placeholder="Search products..."
                         type="text"
                       />
@@ -248,7 +248,7 @@ export const Header = () => {
                             </span>
                           </div>
                         </Link>
-                        <ul className="bb-dropdown-menu min-w-[150px] py-[10px] px-[5px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute z-[16] text-left opacity-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] block rounded-[10px]">
+                        <ul className="bb-dropdown-menu min-w-[150px] py-[10px] px-[5px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute z-[16] text-left opacity-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] dark:border-[#494E5D] block rounded-[10px]">
                           <li className="py-[4px] px-[15px] m-[0] font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
                             <Link
                               className="dropdown-item transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] hover:text-[#6c7fd8] leading-[22px] block w-full font-normal tracking-[0.03rem]"
@@ -337,14 +337,14 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <div className="bb-main-menu-desk bg-primary-light py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
+      <div className="bb-main-menu-desk bg-primary-light dark:bg-secondary-dark py-[5px] border-t-[1px] border-solid border-[#eee] dark:border-[#494E5D] max-[991px]:hidden">
         <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
           <div className="flex flex-wrap w-full">
             <div className="w-full px-[12px]">
               <div className="bb-inner-menu-desk flex max-[1199px]:relative max-[991px]:justify-between">
                 <Link
                   href="javascript:void(0)"
-                  className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-primary-light border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
+                  className="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-primary-light dark:bg-primary-dark border-[1px] border-solid border-[#eee] dark:border-[#494E5D] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
                   <svg className="svg-icon w-[25px] h-[25px]" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <path
                       className="fill-[#6c7fd8]"
