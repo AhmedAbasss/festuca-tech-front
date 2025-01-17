@@ -7,6 +7,8 @@ import { Categories } from "./_components/_categories";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "@/store/themeConfigSlice";
 import { useTranslation } from "react-i18next";
+import { Home } from "./_components/_Home";
+import { Section1 } from "./_components/section1";
 
 const Page = async () => {
   const { t } = useTranslation();
@@ -17,6 +19,7 @@ const Page = async () => {
   return (
     <div className="overflow-hidden">
       {/* <Home /> */}
+      <Section1 />
       <Categories />
       <DealSection2 />
       <DealSection />

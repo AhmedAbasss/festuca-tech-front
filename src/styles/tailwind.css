@@ -2,10 +2,16 @@
 @import "./animate.css";
 /* Select2*/
 @import "./select2.css";
+
 @import "./style.css";
+/* @import "./dark.css"; */
 
 /* Data tables css */
 @import "./datatables.css";
+
+/* slick-carousel */
+/* @import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css"; */
 
 @tailwind base;
 @tailwind components;
