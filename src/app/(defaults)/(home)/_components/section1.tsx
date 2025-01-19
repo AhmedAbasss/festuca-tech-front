@@ -19,7 +19,7 @@ export const Section1 = () => {
     rtl: isRtl,
     nextArrow: <></>,
     prevArrow: <></>,
-    autoplay: true,
+    autoplay: false,
     adaptiveHeight: true,
     pauseOnHover: true,
 
@@ -33,7 +33,7 @@ export const Section1 = () => {
   };
 
   return (
-    <section className="section-hero mb-[50px] max-[1199px]:mb-[35px] py-[50px] relative bg-[#f8f8fb] overflow-hidden">
+    <section className="section-hero mb-[50px] max-[1199px]:mb-[35px] py-[50px] relative bg-secondary-light dark:bg-secondary-dark overflow-hidden">
       <div className="bb-social-follow absolute left-[20px] bottom-[30px] max-[1250px]:hidden">
         <ul className="inner-links">
           {["Fb", "Li", "Dr", "In"].map((item) => (
@@ -47,7 +47,7 @@ export const Section1 = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px]">
+      <div className="!flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px]">
         <div className="flex flex-wrap w-full">
           <div className="w-full">
             <Slider {...settings}>
@@ -100,6 +100,13 @@ export const Section1 = () => {
             </Slider>
           </div>
         </div>
+      </div>
+      <div className="bb-scroll-Page absolute right-[-15px] bottom-[75px] rotate-[270deg] max-[575px]:hidden">
+        <span className="scroll-bar transition-all duration-[0.3s] ease-in-out relative max-[1250px]:hidden">
+          <a href="javascript:void(0)" className="transition-all duration-[0.3s] ease-in-out font-Poppins text-[16px] font-medium leading-[28px] tracking-[0.03rem] text-[#686e7d]">
+            Scroll Page
+          </a>
+        </span>
       </div>
     </section>
   );

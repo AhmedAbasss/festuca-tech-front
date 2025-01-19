@@ -8,6 +8,9 @@ import "@mantine/core/styles.layer.css";
 import "mantine-datatable/styles.layer.css";
 
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
 const APP_NAME = "appName App";
 const APP_DEFAULT_TITLE = " Home | appName App";
