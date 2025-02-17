@@ -5,6 +5,7 @@ import { setPageTitle } from "@/store/themeConfigSlice";
 import { useTranslation } from "react-i18next";
 import { Categories } from "./_components/_Categories";
 import { Section1 } from "./_components/_Section1";
+import { Features } from "./_components/_Features";
 
 const Page = async () => {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ const Page = async () => {
     <div className="overflow-hidden">
       <Categories />
       <Section1 />
+      <Features />
     </div>
   );
 };
