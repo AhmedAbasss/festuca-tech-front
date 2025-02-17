@@ -47,7 +47,7 @@ export const Section1 = () => {
           ))}
         </ul>
       </div>
-      <div className="!flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px]">
+      <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px]">
         <div className="flex flex-wrap w-full">
           <div className="w-full">
             <Slider {...settings}>
@@ -68,7 +68,7 @@ export const Section1 = () => {
                   image: "assets/images/banner.jpg",
                 },
               ].map((slide, index) => (
-                <div key={index} className="flex flex-wrap w-full mb-[-24px]">
+                <div key={index} className="!flex flex-wrap w-full mb-[-24px]">
                   <div className="min-[992px]:w-[50%] w-full px-[12px] mb-[24px]">
                     <div
                       className="h-full flex flex-col items-start justify-center max-[991px]:items-center"
