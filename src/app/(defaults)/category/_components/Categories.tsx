@@ -11,33 +11,6 @@ const CategorySlider = () => {
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);
   const isRtl = themeConfig.rtlClass === "rtl" ? true : false;
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 6,
-  //   slidesToScroll: 3,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1200,
-  //       settings: {
-  //         slidesToShow: 3,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 768,
-  //       settings: {
-  //         slidesToShow: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 576,
-  //       settings: {
-  //         slidesToShow: 1,
-  //       },
-  //     },
-  //   ],
-  // };
   var settings = {
     dots: true,
     infinite: true,

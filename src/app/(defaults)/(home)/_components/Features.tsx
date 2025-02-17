@@ -6,26 +6,6 @@ import { getTranslation } from "../../../../../ni18n/i18n";
 import { useSelector } from "react-redux";
 import { IRootState } from "@/store";
 export const Features = () => {
-  // const el = useRef(null);
-  // const { t }: any = getTranslation();
-  // useEffect(() => {
-  //   const typed = new Typed(el.current, {
-  //     strings: [t(`appName`)],
-  //     loop: true,
-  //     typeSpeed: 50,
-  //     backSpeed: 100,
-  //     backDelay: 1000,
-  //   });
-
-  //   return () => {
-  //     // Destroy Typed instance during cleanup to stop animation
-  //     typed.destroy();
-  //   };
-  // }, [t]);
-
-  // const themeConfig = useSelector((state: IRootState) => state.themeConfig);
-  // const isRtl = themeConfig.rtlClass === "rtl" ? true : false;
-  // const isDark = themeConfig.isDarkMode;
   return (
     <section className="section-services overflow-hidden py-[50px] max-[1199px]:py-[35px]">
       <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">

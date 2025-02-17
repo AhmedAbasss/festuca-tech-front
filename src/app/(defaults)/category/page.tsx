@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "@/store/themeConfigSlice";
 import { useTranslation } from "react-i18next";
-import { Section1 } from "./_components/_section1";
-import { Categories } from "./_components/_categories";
+import { Categories } from "./_components/categories";
+import { Section1 } from "./_components/section1";
 
 const Page = async () => {
   const { t } = useTranslation();
