@@ -76,7 +76,7 @@ const exampleData = [
   },
 ];
 
-export const DealSection2 = () => {
+export const Section1Products = () => {
   return (
     <section className="section-shop pb-[50px] max-[1199px]:pb-[35px]">
       <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">

@@ -1,14 +1,13 @@
 "use client";
 import React, { useEffect } from "react";
-import { DealSection2 } from "./_components/_DealSection2";
 import { Features } from "./_components/Features";
-import { DealSection } from "./_components/_DealSection";
-import { Categories } from "./_components/_categories";
+import { Categories } from "./_components/categories";
 import { useDispatch } from "react-redux";
 import { setPageTitle } from "@/store/themeConfigSlice";
 import { useTranslation } from "react-i18next";
-import { Home } from "./_components/_Home";
 import { Section1 } from "./_components/section1";
+import { Section1Products } from "./_components/Section1Products";
+import { Section2Products } from "./_components/Section2Products";
 
 const Page = async () => {
   const { t } = useTranslation();
@@ -21,8 +20,10 @@ const Page = async () => {
       {/* <Home /> */}
       <Section1 />
       <Categories />
-      <DealSection2 />
-      <DealSection />
+      <Section1Products />
+      <Section2Products />
+      {/* <DealSection2 /> */}
+      {/* <DealSection /> */}
       <Features />
 
       {/* <About />

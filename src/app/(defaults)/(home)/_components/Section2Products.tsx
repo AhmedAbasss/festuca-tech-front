@@ -5,7 +5,7 @@ import { IRootState } from "@/store";
 
 // TODO                                     REMAKE
 
-export const DealSection = () => {
+export const Section2Products = () => {
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);
   const isRtl = themeConfig.rtlClass === "rtl" ? true : false;
   const isDark = themeConfig.isDarkMode;
