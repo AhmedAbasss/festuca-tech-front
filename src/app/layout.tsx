@@ -1,11 +1,13 @@
 import ProviderComponent from "@/components/providers/provider-component";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import "../styles/tailwind.css";
-import "../styles/globals.scss";
+// import "../styles/scss/product/style.scss";
+// import "../styles/globals.scss";
 
 import { Nunito } from "next/font/google";
 import "@mantine/core/styles.layer.css";
 import "mantine-datatable/styles.layer.css";
+import "remixicon/fonts/remixicon.css";
 
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";

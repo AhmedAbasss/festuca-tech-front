@@ -55,7 +55,7 @@ export const Section1 = () => {
                 {
                   title: "Healthy",
                   subtitle: "Flat 30% Off",
-                  image: "assets/images/banner.jpg",
+                  image: "assets/images/gpu.webp",
                 },
                 {
                   title: "Warm",

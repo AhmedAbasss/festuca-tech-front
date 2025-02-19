@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
 
 interface Product {
   name: string;
@@ -19,6 +20,19 @@ interface ProductComponentProps {
 }
 
 const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [nav, setNav] = useState<any>(null);
+  let sliderRef = useRef<any>(null);
+
+  useEffect(() => {
+    setNav(sliderRef);
+  }, []);
+
+  const images = [
+    { src: "assets/images/gpu.webp", title: "thing" },
+    { src: "assets/images/gpu.webp", title: "thing" },
+  ];
+
   return (
     <section className="section-product py-[50px] max-[1199px]:py-[35px]">
       <div className="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
@@ -29,7 +43,7 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
                 <div className="min-[992px]:w-[41.66%] w-full px-[12px] mb-[24px]">
                   <div className="single-pro-slider sticky top-[0] p-[15px] border-[1px] border-solid border-[#eee] rounded-[24px] max-[991px]:max-w-[500px] max-[991px]:m-auto">
                     <div className="single-product-cover">
-                      {[...Array(5)].map((_, index) => (
+                      {[...Array(1)].map((_, index) => (
                         <div key={index} className="single-slide zoom-image-hover rounded-tl-[15px] rounded-tr-[15px]">
                           <img
                             className="img-responsive rounded-tl-[15px] rounded-tr-[15px]"
@@ -40,8 +54,8 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
                         </div>
                       ))}
                     </div>
-                    <div className="single-nav-thumb w-full overflow-hidden">
-                      {[...Array(5)].map((_, index) => (
+                    {/* <div className="single-nav-thumb w-full overflow-hidden flex">
+                      {[...Array(3)].map((_, index) => (
                         <div key={index} className="single-slide px-[10px] block">
                           <img
                             className="img-responsive border-[1px] border-solid border-transparent transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-[15px]"
@@ -51,6 +65,49 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
                           />
                         </div>
                       ))}
+                    </div> */}
+                    <div className="slider-container flex flex-col gap-1">
+                      <Slider
+                        asNavFor={nav}
+                        ref={(slider) => {
+                          sliderRef = slider as any;
+                        }}
+                        // slidesToShow={3}
+                        // swipeToSlide={true}
+                        // focusOnSelect={true}
+
+                        {...{
+                          infinite: true,
+                          speed: 500,
+                          slidesToShow: 4,
+                          slidesToScroll: 4,
+                          rtl: true,
+                          adaptiveHeight: true,
+                          focusOnSelect: false,
+                          swipeToSlide: false,
+                          // afterChange: () => setUpdateCount(updateCount + 1),
+                          // beforeChange: (current, next) => setSlideIndex(next)
+                        }}>
+                        {images.map((item, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={"single-slide px-[10px] block cursor-pointer"}
+                              onClick={() => {
+                                (sliderRef as any)?.slickGoTo(index);
+                              }}>
+                              <img
+                                className={
+                                  `img-responsive border-[1px] border-solid border-transparent hover:border-primary  transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-xl ` +
+                                  { "border-primary  ": slideIndex === index }
+                                }
+                                src={item.src}
+                                alt={item.title}
+                              />
+                            </div>
+                          );
+                        })}
+                      </Slider>
                     </div>
                   </div>
                 </div>
