@@ -5,6 +5,7 @@ import { setPageTitle } from "@/store/themeConfigSlice";
 import { useTranslation } from "react-i18next";
 import Breadcrumb from "./_components/_Breadcrumb";
 import ProductComponent from "./_components/_Product";
+import RelatedProducts from "./_components/_RelatedProducts";
 
 const sampleProduct = {
   name: "Smartphone XYZ",
@@ -46,6 +47,7 @@ const Page = async () => {
     <div className="overflow-hidden">
       <Breadcrumb />
       <ProductComponent product={sampleProduct} />
+      <RelatedProducts />
     </div>
   );
 };

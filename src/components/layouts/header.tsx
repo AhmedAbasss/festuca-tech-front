@@ -198,6 +198,7 @@ export const Header = () => {
                     <form className="bb-btn-group-form flex relative max-[991px]:ml-[20px] max-[767px]:m-[0]" action="#">
                       <div className="inner-select border-r-[1px] border-solid border-[#eee] dark:border-[#494E5D] h-full px-[20px] flex items-center absolute top-[0] left-[0] max-[991px]:hidden">
                         <div className="custom-select w-[100px] capitalize text-[#777] flex items-center justify-between transition-all duration-[0.2s] ease-in text-[14px] relative">
+                          vegetables
                           <select>
                             <option value="option1">vegetables</option>
                             <option value="option2">Cold Drinks</option>

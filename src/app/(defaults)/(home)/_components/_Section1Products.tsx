@@ -7,7 +7,7 @@ const exampleData = [
   {
     title: "Geforce RTX 3060 ventus 2x",
     description: "High-quality wireless headphones with noise cancellation and long battery life.",
-    url: "/gg",
+    url: "/Products",
     label: "NEW",
     image: "/assets/images/gpu.webp",
     altImage: "/assets/images/gpu.webp",
@@ -21,7 +21,7 @@ const exampleData = [
   {
     title: "Geforce RTX 3060 ventus 2x",
     description: "High-quality wireless headphones with noise cancellation and long battery life.",
-    url: "/gg",
+    url: "/Products",
     label: "NEW",
     image: "/assets/images/gpu.webp",
     altImage: "/assets/images/gpu.webp",
@@ -35,7 +35,7 @@ const exampleData = [
   {
     title: "Geforce RTX 3060 ventus 2x",
     description: "High-quality wireless headphones with noise cancellation and long battery life.",
-    url: "/gg",
+    url: "/Products",
     label: "NEW",
     image: "/assets/images/gpu.webp",
     altImage: "/assets/images/gpu.webp",
@@ -49,7 +49,7 @@ const exampleData = [
   {
     title: "Geforce RTX 3060 ventus 2x",
     description: "High-quality wireless headphones with noise cancellation and long battery life.",
-    url: "/gg",
+    url: "/Products",
     label: "NEW",
     image: "/assets/images/gpu.webp",
     altImage: "/assets/images/gpu.webp",
@@ -63,7 +63,7 @@ const exampleData = [
   {
     title: "Geforce RTX 3060 ventus 2x",
     description: "High-quality wireless headphones with noise cancellation and long battery life.",
-    url: "/gg",
+    url: "/Products",
     label: "NEW",
     image: "/assets/images/gpu.webp",
     altImage: "/assets/images/gpu.webp",
