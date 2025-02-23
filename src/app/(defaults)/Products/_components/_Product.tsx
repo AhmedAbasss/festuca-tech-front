@@ -21,6 +21,7 @@ interface ProductComponentProps {
 
 const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [detail, setDetail] = useState("Detail");
   const [nav, setNav] = useState<any>(null);
   let sliderRef = useRef<any>(null);
 
@@ -223,121 +224,138 @@ const ProductComponent: React.FC<ProductComponentProps> = ({ product }) => {
             <div className="bb-single-pro-tab">
               <div className="bb-pro-tab mb-[24px]">
                 <ul className="bb-pro-tab-nav flex flex-wrap mx-[-20px] max-[991px]:justify-center" id="ProTab">
-                  <li className="nav-item relative leading-[28px]">
-                    <a className="nav-link px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem] block active" href="#detail">
+                  <li onClick={() => setDetail("Detail")} className="nav-item relative leading-[28px]">
+                    <div
+                      className={`nav-link cursor-pointer text-[#686e7d] ${
+                        detail === "Detail" && "text-primary"
+                      } px-[20px] font-Poppins text-[16px] font-medium capitalize leading-[28px] tracking-[0.03rem] block`}>
                       Detail
-                    </a>
+                    </div>
                   </li>
-                  <li className="nav-item relative leading-[28px]">
-                    <a className="nav-link px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem] block" href="#information">
+                  <li onClick={() => setDetail("Information")} className="nav-item relative leading-[28px]">
+                    <div
+                      className={`nav-link cursor-pointer text-[#686e7d] ${
+                        detail === "Information" && "text-primary"
+                      } px-[20px] font-Poppins text-[16px] font-medium capitalize leading-[28px] tracking-[0.03rem] block`}>
                       Information
-                    </a>
+                    </div>
                   </li>
-                  <li className="nav-item relative leading-[28px]">
-                    <a className="nav-link px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem] block" href="#reviews">
+                  <li onClick={() => setDetail("Reviews")} className="nav-item relative leading-[28px]">
+                    <div
+                      className={`nav-link cursor-pointer text-[#686e7d] ${
+                        detail === "Reviews" && "text-primary"
+                      } px-[20px] font-Poppins text-[16px] font-medium capitalize leading-[28px] tracking-[0.03rem] block`}>
                       Reviews
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </div>
               <div className="tab-content">
-                <div className="tab-pro-pane" id="detail">
-                  <div className="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
-                    <div className="bb-details">
-                      <p className="mb-[12px] font-Poppins text-[#686e7d] leading-[28px] tracking-[0.03rem] font-light">{product.details.join(" ")}</p>
-                      <div className="details-info">
-                        <ul className="list-disc pl-[20px] mb-[0]">
-                          {product.details.map((detail, index) => (
-                            <li key={index} className="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                              {detail}
+                {detail === "Detail" && (
+                  <div className="tab-pro-pane" id="detail">
+                    <div className="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
+                      <div className="bb-details">
+                        <p className="mb-[12px] font-Poppins text-[#686e7d] leading-[28px] tracking-[0.03rem] font-light">{product.details.join(" ")}</p>
+                        <div className="details-info">
+                          <ul className="list-disc pl-[20px] mb-[0]">
+                            {product.details.map((detail, index) => (
+                              <li key={index} className="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
+                                {detail}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {detail === "Information" && (
+                  <div className="tab-pro-pane" id="information">
+                    <div className="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
+                      <div className="information">
+                        <ul className="list-disc pl-[20px]">
+                          {product.information.map((info, index) => (
+                            <li key={index} className="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
+                              <span className="inline-flex min-w-[130px] font-medium">{info.label}</span> {info.value}
                             </li>
                           ))}
                         </ul>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="tab-pro-pane" id="information">
-                  <div className="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
-                    <div className="information">
-                      <ul className="list-disc pl-[20px]">
-                        {product.information.map((info, index) => (
-                          <li key={index} className="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                            <span className="inline-flex min-w-[130px] font-medium">{info.label}</span> {info.value}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pro-pane" id="reviews">
-                  <div className="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
-                    <div className="bb-reviews">
-                      {product.reviews.map((review, index) => (
-                        <div key={index} className="reviews-bb-box flex mb-[24px] max-[575px]:flex-col">
-                          <div className="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
-                            <img src={review.image} alt={`img-${index + 1}`} className="w-[50px] h-[50px] max-w-[50px] rounded-[10px]" />
-                          </div>
-                          <div className="inner-contact">
-                            <h4 className="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">{review.name}</h4>
-                            <div className="bb-pro-rating flex">
-                              {[...Array(5)].map((_, i) => (
-                                <i
-                                  key={i}
-                                  className={`ri-star-${i < review.rating ? "fill" : "line"} float-left text-[15px] mr-[3px] ${
-                                    i < review.rating ? "text-[#fea99a]" : "text-[#777]"
-                                  }`}></i>
-                              ))}
+                )}
+                {detail === "Reviews" && (
+                  <div className="tab-pro-pane" id="reviews">
+                    <div className="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
+                      <div className="bb-reviews">
+                        {product.reviews.map((review, index) => (
+                          <div key={index} className="reviews-bb-box flex mb-[24px] max-[575px]:flex-col">
+                            <div className="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
+                              <img src={review.image} alt={`img-${index + 1}`} className="w-[50px] h-[50px] max-w-[50px] rounded-[10px]" />
                             </div>
-                            <p className="font-Poppins text-[14px] leading-[26px] font-light tracking-[0.03rem] text-[#686e7d]">{review.comment}</p>
+                            <div className="inner-contact">
+                              <h4 className="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">{review.name}</h4>
+                              <div className="bb-pro-rating flex">
+                                {[...Array(5)].map((_, i) => (
+                                  <i
+                                    key={i}
+                                    className={`ri-star-${i < review.rating ? "fill" : "line"} float-left text-[15px] mr-[3px] ${
+                                      i < review.rating ? "text-[#fea99a]" : "text-[#777]"
+                                    }`}></i>
+                                ))}
+                              </div>
+                              <p className="font-Poppins text-[14px] leading-[26px] font-light tracking-[0.03rem] text-[#686e7d]">{review.comment}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="bb-reviews-form">
+                        <h3 className="font-quicksand tracking-[0.03rem] leading-[1.2] mb-[8px] text-[20px] font-bold text-[#3d4750]">Add a Review</h3>
+                        <div className="bb-review-rating flex mb-[12px]">
+                          <span className="pr-[10px] font-Poppins text-[15px] font-semibold leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your ratting :</span>
+                          <div className="bb-pro-rating">
+                            {[...Array(5)].map((_, index) => (
+                              <i
+                                key={index}
+                                className={`ri-star-${index < 4 ? "fill" : "line"} float-left text-[15px] mr-[3px] ${index < 4 ? "text-[#fea99a]" : "text-[#777]"}`}></i>
+                            ))}
                           </div>
                         </div>
-                      ))}
-                    </div>
-                    <div className="bb-reviews-form">
-                      <h3 className="font-quicksand tracking-[0.03rem] leading-[1.2] mb-[8px] text-[20px] font-bold text-[#3d4750]">Add a Review</h3>
-                      <div className="bb-review-rating flex mb-[12px]">
-                        <span className="pr-[10px] font-Poppins text-[15px] font-semibold leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your ratting :</span>
-                        <div className="bb-pro-rating">
-                          {[...Array(5)].map((_, index) => (
-                            <i key={index} className={`ri-star-${index < 4 ? "fill" : "line"} float-left text-[15px] mr-[3px] ${index < 4 ? "text-[#fea99a]" : "text-[#777]"}`}></i>
-                          ))}
-                        </div>
+                        <form action="#">
+                          <div className="input-box mb-[24px]">
+                            <input
+                              type="text"
+                              placeholder="Name"
+                              name="your-name"
+                              className="w-full h-[50px] border-[1px] border-solid border-[#eee] pl-[20px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"
+                            />
+                          </div>
+                          <div className="input-box mb-[24px]">
+                            <input
+                              type="email"
+                              placeholder="Email"
+                              name="your-email"
+                              className="w-full h-[50px] border-[1px] border-solid border-[#eee] pl-[20px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"
+                            />
+                          </div>
+                          <div className="input-box mb-[24px]">
+                            <textarea
+                              name="your-comment"
+                              placeholder="Enter Your Comment"
+                              className="w-full h-[100px] border-[1px] border-solid border-[#eee] py-[20px] pl-[20px] pr-[10px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"></textarea>
+                          </div>
+                          <div className="input-button">
+                            <a
+                              href="javascript:void(0)"
+                              className="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] inline-flex font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[15px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">
+                              View Cart
+                            </a>
+                          </div>
+                        </form>
                       </div>
-                      <form action="#">
-                        <div className="input-box mb-[24px]">
-                          <input
-                            type="text"
-                            placeholder="Name"
-                            name="your-name"
-                            className="w-full h-[50px] border-[1px] border-solid border-[#eee] pl-[20px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"
-                          />
-                        </div>
-                        <div className="input-box mb-[24px]">
-                          <input
-                            type="email"
-                            placeholder="Email"
-                            name="your-email"
-                            className="w-full h-[50px] border-[1px] border-solid border-[#eee] pl-[20px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"
-                          />
-                        </div>
-                        <div className="input-box mb-[24px]">
-                          <textarea
-                            name="your-comment"
-                            placeholder="Enter Your Comment"
-                            className="w-full h-[100px] border-[1px] border-solid border-[#eee] py-[20px] pl-[20px] pr-[10px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"></textarea>
-                        </div>
-                        <div className="input-button">
-                          <a
-                            href="javascript:void(0)"
-                            className="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] inline-flex font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[15px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">
-                            View Cart
-                          </a>
-                        </div>
-                      </form>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

@@ -274,7 +274,7 @@ export const Header = () => {
                         </ul>
                       </div>
                       <Link
-                        href="wishlist.html"
+                        href="wishlist"
                         className="bb-header-btn bb-wish-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                         title="Wishlist">
                         <div className="header-icon relative flex">
