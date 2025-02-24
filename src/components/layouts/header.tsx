@@ -7,6 +7,7 @@ import { toggleRTL, toggleSidebar, toggleTheme } from "@/store/themeConfigSlice"
 import { usePathname, useRouter } from "next/navigation";
 import Dropdown from "../dropdown";
 import { getTranslation } from "../../../ni18n/i18n";
+import { OptionType, SelectForm } from "../Form/SelectForm";
 
 // TODO move this component to other file
 interface MenuItem {
@@ -205,6 +206,25 @@ export const Header = () => {
                             <option value="option3">Fruits</option>
                             <option value="option4">Bakery</option>
                           </select>
+                          {/* <SelectForm
+                    formikProps={props}
+                    name={"isActive"}
+                    title={t("status")}
+                    placeholder={t("choses-status")}
+                    options={[
+                      { label: t("active"), value: "true" },
+                      { label: t("inactive"), value: "false" },
+                    ]}
+                    props={{
+                      isClearable: true,
+                      onChange(val) {
+                        props.setFieldValue(
+                          `isActive`,
+                          (val as OptionType)?.value ?? ""
+                        );
+                      },
+                    }}
+                  /> */}
                         </div>
                       </div>
                       <input
@@ -368,6 +388,7 @@ export const Header = () => {
                     { label: "Home", url: "/" },
                     { label: "Categories", url: "/category" },
                     { label: "Products", url: "Products" },
+                    { label: "aboutUs", url: "aboutUs" },
                     { label: "Pages", url: "Pages.html" },
                     { label: "Blog", url: "Blog.html" },
                     {
