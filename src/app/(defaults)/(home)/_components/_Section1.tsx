@@ -19,7 +19,7 @@ export const Section1 = () => {
     rtl: isRtl,
     nextArrow: <></>,
     prevArrow: <></>,
-    autoplay: false,
+    autoplay: true,
     adaptiveHeight: true,
     pauseOnHover: true,
 

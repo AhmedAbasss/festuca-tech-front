@@ -300,7 +300,7 @@ export const Header = () => {
                         </div>
                       </Link>
                       <Link
-                        href="javascript:void(0)"
+                        href="cart"
                         className="bb-header-btn bb-cart-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                         title="Cart">
                         <div className="header-icon relative flex">
